@@ -1,23 +1,28 @@
 # PlantUML Identity Icon Sprites
 
+>Note: This repo is a fork of https://github.com/UberEther/plantuml-identity-sprites
+
+
+
 ## Getting Started
 
 This work was started with examples from the great script by Anthony in the PlantUML repo at [https://github.com/plantuml/plantuml/blob/master/tools/create_sprites.sh](https://github.com/plantuml/plantuml/blob/master/tools/create_sprites.sh)
 
-```puml
+```text
 !define ICONURL https://raw.githubusercontent.com/uberether/plantuml-identity-sprites/main
+```
 
 Import the sprites that you want
 
-```puml
-!include ../identicons-set-v1/icon_api.puml
-!include ../identicons-set-v2/icon_browser.puml
-!include ../identicons-set-v2/icon_webauthn.puml
+```text
+!include identicons-set-v1/icon_api.puml
+!include identicons-set-v2/icon_browser.puml
+!include identicons-set-v2/icon_webauthn.puml
 ```
 
 or via url
 
-```puml
+```text
 !includeurl ICONURL/common.puml
 !includeurl ICONURL/identicons-set-v1/icon_api.puml
 !includeurl ICONURL/identicons-set-v2/icon_browser.puml
@@ -26,13 +31,13 @@ or via url
 
 To use the sprites add one of the macros
 
-```puml
+```text
 ID1_ICON_API(api)
 ```
 
 The macros are prefixed with the set and the name of the icon
 
-```puml
+```text
 <prefix>_<name>(alias)
 <prefix>_<name>(alias,label)
 <prefix>_<name>(alias,label,shape)
@@ -44,13 +49,18 @@ The following icon sets are included:
 
 | Name                                                                        | Index                                     |
 | --------------------------------------------------------------------------- | ----------------------------------------- |
-| [Identicons v1](https://identicons.dev/static/icons/identicons-set-v1.zip)  | [List of macros](identicons-set-v1/index.md)   |
-| [Identicons v2](https://github.com/auth0/identicons)                        | [List of macros](identicons-set-v2/index.md) |
+| [Identicons v1](identicons-set-v1/index.md)  | [List of macros](identicons-set-v1/index.md)   |
+| [Identicons v2](identicons-set-v1/index.md)                        | [List of macros](identicons-set-v2/index.md) |
+
+
+
+
 
 ## Build
+
 ### Mac OSX
 
-```terminal
+```sh
 ./create_sprites.sh -p identicons-set-v2 ID2
 ```
 
