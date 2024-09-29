@@ -1,153 +1,123 @@
 #!/usr/bin/env bash
 
 # Default parameters
-output_dir="./icons"
-png_dir="${output_dir}/png"
-svg_dir="${output_dir}/svg"
-meta_dir="./meta"
-puml_dir="./puml"
-graylevel=16
-width=48
-height=48
-prefix="ID1"
-background_color="transparent"
-report_file="sprite_report.log"
-icon_md_file="Icons.md"
-
-# Color themes to be showcased in the PlantUML diagram
-declare -a color_themes=("black" "red" "blue" "green" "yellow")
-
-# Help usage message
-usage="Batch creates sprite files for PlantUML.
-
-$(basename "$0") [options] prefix
-
-options:
-    -p  directory path to process (default: ./)
-    -g  sprite graylevel (default: 16)
-    -w  image width (default: 48)
-    -h  image height (default: 48)
-    -o  output directory (default: ./icons)
-    -b  background color (default: transparent)
-    prefix: a prefix added to the sprite name."
+dir="./icons/png"    # Directory path to process PNG files
+graylevel=16         # Number of grayscale colors, default: 16
+prefix="ID1"         # Default prefix
+puml_dir="$(pwd)/puml"  # Use absolute path for puml directory
+meta_dir="$(pwd)/meta"    # Use absolute path for meta directory
+report_file="${meta_dir}/sprite_report.log"
 
 # Function to log progress
 log_progress() {
+    mkdir -p "$meta_dir" || { echo "Error: Failed to create meta directory"; exit 1; }
     echo "$1" | tee -a "$report_file"
 }
 
-# Main function
-main () {
-    log_progress "Initializing icon processing..."
+# Ensure necessary directories exist
+ensure_directories() {
+    mkdir -p "$puml_dir" || { echo "Error: Failed to create puml directory"; exit 1; }
+    mkdir -p "$meta_dir" || { echo "Error: Failed to create meta directory"; exit 1; }
+    log_progress "Directories ensured: $puml_dir and $meta_dir."
+}
 
+########################################
+#
+#    Main function
+#
+########################################
+main () {
     # Get arguments
-    while getopts p:w:h:g:o:b: option
-    do
+    while getopts p:g: option; do
         case "$option" in
             p) dir="$OPTARG";;
-            w) width="$OPTARG";;
-            h) height="$OPTARG";;
             g) graylevel="$OPTARG";;
-            o) output_dir="$OPTARG"; png_dir="${output_dir}/png"; svg_dir="${output_dir}/svg"; meta_dir="./meta";;
-            b) background_color="$OPTARG";;
-            :) echo "$usage"; exit 1;;
-           \?) echo "$usage"; exit 1;;
+            :) echo "$usage"
+               exit 1;;
+           \?) echo "$usage"
+               exit 1;;
         esac
     done
 
-    log_progress "Using the following configuration:"
-    log_progress "Directory: $dir"
-    log_progress "Output Directory: $output_dir"
-    log_progress "Image Width: $width, Height: $height"
-    log_progress "Graylevel: $graylevel"
-    log_progress "Background Color: $background_color"
-    log_progress "Prefix: $prefix"
+    # Get mandatory argument for prefix
+    shift $((OPTIND-1))
+    prefix=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+    prefixupper=$(echo "$1" | tr '[:lower:]' '[:upper:]')
 
-    # Ensure output directories exist
-    mkdir -p "$png_dir"
-    mkdir -p "$svg_dir"
-    mkdir -p "$meta_dir"
-    mkdir -p "$puml_dir"
-    log_progress "Created output directories."
+    # Check if the prefix was provided
+    if [ -z "$prefix" ]; then
+        echo "Please specify a prefix!"
+        exit 1
+    fi
 
-    # Initialize Icons.md file in root directory
-    echo "# Icon Set" > "$icon_md_file"
-    echo "### Overview of Generated Icons" >> "$icon_md_file"
-    echo "| Name  | Macro  | Icon |" >> "$icon_md_file"
-    echo "|-------|--------|-------|" >> "$icon_md_file"
-    log_progress "Initialized Icons.md generation."
+    # Ensure necessary directories exist before any file operations
+    ensure_directories
 
-    # Initialize the theming demo PlantUML file
-    puml_theming_demo="$puml_dir/theming_demo.puml"
-    echo "@startuml" > "$puml_theming_demo"
-    echo "title Icon Theming Demonstration" >> "$puml_theming_demo"
-    echo "skinparam backgroundcolor transparent" >> "$puml_theming_demo"
+    # Setup index generation
+    index_file="${meta_dir}/index.md"
+    echo "# Icon Set for $dir" > "$index_file"
+    echo "### Overview of Generated Icons" >> "$index_file"
+    echo "| Name  | Macro  | Image | PUML Path |" >> "$index_file"
+    echo "|-------|--------|-------|-----------|" >> "$index_file"
+    
+    log_progress "Initialized index file at $index_file."
+
+    # Change to directory with images
+    cd "$dir" || { echo "Error: Failed to change directory to $dir"; exit 1; }
 
     process_png
-    process_svg
-
-    # Finalize the theming demo PlantUML file
-    echo "@enduml" >> "$puml_theming_demo"
-    log_progress "Finalized theming demonstration PUML."
-
-    # Generate the theming demonstration PNG from the PUML
-    plantuml -tpng "$puml_theming_demo" -o "$meta_dir"
-    log_progress "Generated the theming demonstration PNG."
-
-    echo "Done."
 }
 
-# Process PNG files and update the Markdown table
+########################################
+#
+#    Generate PlantUml sprite
+#
+########################################
 process_png () {
-    log_progress "Processing PNG files..."
-    
-    for i in "$png_dir"/*.png; do
+    for i in *.png; do
         [ -f "$i" ] || continue
+
+        # Process and standardize the PNG filenames
         filename=$(basename "$i" .png)
         filenameupper=$(echo "$filename" | tr '[:lower:]' '[:upper:]')
-        spritename="${prefix}_${filenameupper}"
+        spritename="${prefix}_$filename"
+        spritenameupper="${prefixupper}_$filenameupper"
+        spritestereo="$prefixupper $filenameupper"
 
-        # Add the icon to the Markdown table
-        echo "| $filename | ${spritename} | ![icon](./icons/png/$filename.png) |" >> "$icon_md_file"
+        # Generate PUML for each PNG
+        puml_file="${puml_dir}/${filename}.puml"
+
+        # Debugging: Output absolute path for file
+        echo "Attempting to create file at: $puml_file"
+
+        # Create and write to the PUML file directly
+        if ! echo "@startuml" > "$puml_file"; then
+            echo "Error: Failed to write to $puml_file (at the '@startuml' line)"
+            exit 1
+        fi
+
+        # Add encoded sprite (simplified for now)
+        if ! echo "$(plantuml -encodesprite $graylevel $i)" >> "$puml_file"; then
+            echo "Error: Failed to encode sprite for $filename"
+            exit 1
+        fi
         
-        # Add the sprite definition to the theming demo PUML file
-        echo "!define ${spritename} SPRITE" >> "$puml_theming_demo"
+        # Add PUML definitions for different sprite configurations
+        {
+            echo "!define $spritenameupper(_color) SPRITE_PUT($spritename, _color)"
+            echo "!define $spritenameupper(_color, _scale) SPRITE_PUT($spritename, _color, _scale)"
+            echo "!define $spritenameupper(_color, _scale, _alias) SPRITE_ENT(_alias, $spritestereo, $spritename, _color, _scale)"
+            echo "!define $spritenameupper(_color, _scale, _alias, _shape) SPRITE_ENT(_alias, $spritestereo, $spritename, _color, _scale, _shape)"
+            echo "!define $spritenameupper(_color, _scale, _alias, _shape, _label) SPRITE_ENT_L(_alias, $spritestereo, _label, $spritename, _color, _scale, _shape)"
+            echo "skinparam folderBackgroundColor<<$spritenameupper>> White"
+            echo "@enduml"
+        } >> "$puml_file"
         
-        # Showcase each icon with different color themes
-        echo "folder \"${filenameupper}\" {" >> "$puml_theming_demo"
-        for color in "${color_themes[@]}"; do
-            echo "  entity \"${filenameupper} in $color\" as ${spritename}_${color} <<${color}>>" >> "$puml_theming_demo"
-        done
-        echo "}" >> "$puml_theming_demo"
+        # Log progress
+        log_progress "Generated PUML for $filename -> $puml_file"
 
-        log_progress "Processed $filename (PNG)."
-    done
-}
-
-# Process SVG files and update the Markdown table
-process_svg () {
-    log_progress "Processing SVG files..."
-    
-    for i in "$svg_dir"/*.svg; do
-        [ -f "$i" ] || continue
-        filename=$(basename "$i" .svg)
-        filenameupper=$(echo "$filename" | tr '[:lower:]' '[:upper:]')
-        spritename="${prefix}_${filenameupper}"
-
-        # Add the icon to the Markdown table
-        echo "| $filename | ${spritename} | ![icon](./icons/svg/$filename.svg) |" >> "$icon_md_file"
-        
-        # Add the sprite definition to the theming demo PUML file
-        echo "!define ${spritename} SPRITE" >> "$puml_theming_demo"
-        
-        # Showcase each icon with different color themes
-        echo "folder \"${filenameupper}\" {" >> "$puml_theming_demo"
-        for color in "${color_themes[@]}"; do
-            echo "  entity \"${filenameupper} in $color\" as ${spritename}_${color} <<${color}>>" >> "$puml_theming_demo"
-        done
-        echo "}" >> "$puml_theming_demo"
-
-        log_progress "Processed $filename (SVG)."
+        # Update the index file
+        echo "| $filename | ${prefixupper}_$filenameupper | ![image-$filename]($dir/$filename.png) | $puml_file |" >> "$index_file"
     done
 }
 

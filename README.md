@@ -1,113 +1,187 @@
-# PlantUML Identity Icon Sprites
+# PlantUML Identity Sprites Repository
 
->Note: This repo is a fork of https://github.com/UberEther/plantuml-identity-sprites
+Welcome to the **PlantUML Identity Sprites** repository! This project automates the conversion of `.png` and `.svg` icon files into PlantUML sprite files (`.puml`), providing a powerful way to use custom icons in your PlantUML diagrams. The scripts also generate markdown indexes and logs for easy navigation and reference.
 
+## Repository Overview
 
+This repository contains:
+- **Scripts**: Automate the creation of PlantUML sprites from icon files.
+- **Icons**: Both `.png` and `.svg` icons, categorized in the `icons` folder.
+- **Generated Sprite Files**: PlantUML `.puml` files corresponding to each icon, located in the `puml` directory.
+- **Generated Diagrams**: Example diagrams showcasing the use of these sprites.
+- **Common Macros**: A `common.puml` file that contains reusable macros for creating aliased and colorized entities with or without labels.
+
+### Folder Structure
+
+```plaintext
+.
+├── Icons.md
+├── IdentitySprites.ipynb
+├── LICENSE
+├── README.md
+├── common.puml                # Contains reusable macros for creating entities.
+├── create_sprites.sh           # Main script for generating PlantUML sprites.
+├── icons/                      # Contains all input icons.
+│   ├── png/                    # PNG icons used for sprite generation.
+│   └── svg/                    # Optional SVG icons.
+├── puml/                       # Contains generated PlantUML sprite files.
+├── identity_sprites_diagram/    # Example diagrams created using the generated sprites.
+└── meta/                       # Generated logs and reports.
+```
 
 ## Getting Started
 
-This work was started with examples from the great script by Anthony in the PlantUML repo at [https://github.com/plantuml/plantuml/blob/master/tools/create_sprites.sh](https://github.com/plantuml/plantuml/blob/master/tools/create_sprites.sh)
+### Prerequisites
 
-```text
-!define ICONURL https://raw.githubusercontent.com/uberether/plantuml-identity-sprites/main
+Ensure you have the following tools installed on your system:
+- **[PlantUML](http://plantuml.com/)**: For rendering diagrams.
+- **Bash**: For running the `create_sprites.sh` script.
+  
+### Usage
+
+To generate PlantUML sprite files from your icons, run the following command:
+
+```bash
+./create_sprites.sh PREFIX
 ```
 
-Import the sprites that you want
+Where `PREFIX` is the custom prefix you'd like to use for your sprite macros. For example, if you use `ID`, the generated macros will be in the form `ID_ICONNAME`.
 
-```text
-!include identicons-set-v1/icon_api.puml
-!include identicons-set-v2/icon_browser.puml
-!include identicons-set-v2/icon_webauthn.puml
+### Example
+
+```bash
+./create_sprites.sh IDENTITY
 ```
 
-or via url
+This will generate sprite files for each icon and store them in the `puml/` directory. It will also generate a markdown index (`meta/index.md`) and a log file (`meta/sprite_report.log`).
 
-```text
-!includeurl ICONURL/common.puml
-!includeurl ICONURL/identicons-set-v1/icon_api.puml
-!includeurl ICONURL/identicons-set-v2/icon_browser.puml
-!includeurl ICONURL/identicons-set-v2/icon_webauthn.puml
+## Common Macros: `common.puml`
+
+The `common.puml` file contains macros that simplify the process of creating entities with sprites, color, aliases, and labels.
+
+### 1. `ENTITY` Macro (Without Label)
+
+This macro creates an aliased entity with a sprite, colored by a specified color, and assigns it a stereotype for additional styling. This version does **not** display a label.
+
+#### Parameters:
+- **e_type**: The entity type (e.g., `component`, `node`, `agent`, etc.).
+- **e_color**: The color of the sprite.
+- **e_sprite**: The sprite for the icon.
+- **e_alias**: The alias used for this entity in the diagram.
+- **e_stereo**: The stereotype, which can define additional styling.
+
+#### Syntax:
+```plantuml
+ENTITY(e_type, e_color, e_sprite, e_alias, e_stereo)
 ```
 
-To use the sprites add one of the macros
-
-```text
-ID1_ICON_API(api)
+#### Example:
+```plantuml
+ENTITY(component, "#00FF00", icon_api, MyAlias, "API")
 ```
 
-The macros are prefixed with the set and the name of the icon
+This will render a green `component` entity using the `icon_api` sprite with the alias `MyAlias` and stereotype `API`.
 
-```text
-<prefix>_<name>(alias)
-<prefix>_<name>(alias,label)
-<prefix>_<name>(alias,label,shape)
-<prefix>_<name>(alias,label,shape,color)
-```
-## Icon Sets
+### 2. `ENTITY` Macro (With Label)
 
-The following icon sets are included:
+This macro extends the above by allowing a label to be displayed under the sprite.
 
-| Name                                                                        | Index                                     |
-| --------------------------------------------------------------------------- | ----------------------------------------- |
-| [Identicons v1](identicons-set-v1/index.md)  | [List of macros](identicons-set-v1/index.md)   |
-| [Identicons v2](identicons-set-v1/index.md)                        | [List of macros](identicons-set-v2/index.md) |
+#### Parameters:
+- **e_type**: The entity type (e.g., `component`, `node`, `agent`, etc.).
+- **e_color**: The color of the sprite.
+- **e_sprite**: The sprite for the icon.
+- **e_label**: The label to display under the sprite.
+- **e_alias**: The alias used for this entity in the diagram.
+- **e_stereo**: The stereotype, which can define additional styling.
 
-
-
-
-
-## Build
-
-### Mac OSX
-
-```sh
-./create_sprites.sh -p identicons-set-v2 ID2
+#### Syntax:
+```plantuml
+ENTITY(e_type, e_color, e_sprite, e_label, e_alias, e_stereo)
 ```
 
-## Note
+#### Example:
+```plantuml
+ENTITY(node, "#FFDD00", icon_backend, "Backend Service", MyBackend, "Backend")
+```
 
-- All brand icons are trademarks of their respective owners.
-- Thanks to tupadr3 for [plantuml-icon-font-sprites](https://github.com/tupadr3/plantuml-icon-font-sprites)
-- Thanks to milo-minderbinder for [AWS-PlantUML](https://github.com/milo-minderbinder/AWS-PlantUML)
-- Thanks to [yuri-becker](https://github.com/yuri-becker) for the integration of [Devicon 2](https://konpa.github.io/devicon/)
+This will render a yellow `node` entity using the `icon_backend` sprite with the label "Backend Service", the alias `MyBackend`, and the stereotype `Backend`.
 
-## Contributing
+### Hiding Stereotypes
 
-Contributions are welcome. In order to update an existing set of icons or to add a new icon set please fork the repository and use a feature branch.
+By default, stereotypes are hidden using the `hide stereotype` directive at the end of `common.puml`. You can customize this if you prefer to display stereotypes.
 
-## Changelog
+## Sprite Index
 
-### v1.0.0
+Here is a list of all generated PlantUML sprites. Each sprite can be referenced in your diagrams using the associated macro.
 
-- Initial release
+| Icon Name                     | Sprite Macro             | PlantUML Code |
+|-------------------------------|--------------------------|---------------|
+| `icon_access_token`            | `IDENTITY_ICON_ACCESS_TOKEN`  | `!define IDENTITY_ICON_ACCESS_TOKEN(_color, _scale) SPRITE_PUT(IDENTITY_icon_access_token, _color, _scale)` |
+| `icon_account_takeover`        | `IDENTITY_ICON_ACCOUNT_TAKEOVER`  | `!define IDENTITY_ICON_ACCOUNT_TAKEOVER(_color, _scale) SPRITE_PUT(IDENTITY_icon_account_takeover, _color, _scale)` |
+| `icon_actions`                 | `IDENTITY_ICON_ACTIONS`  | `!define IDENTITY_ICON_ACTIONS(_color, _scale) SPRITE_PUT(IDENTITY_icon_actions, _color, _scale)` |
+| `icon_activity`                | `IDENTITY_ICON_ACTIVITY`  | `!define IDENTITY_ICON_ACTIVITY(_color, _scale) SPRITE_PUT(IDENTITY_icon_activity, _color, _scale)` |
+| `icon_api`                     | `IDENTITY_ICON_API`  | `!define IDENTITY_ICON_API(_color, _scale) SPRITE_PUT(IDENTITY_icon_api, _color, _scale)` |
+| `icon_auth0`                   | `IDENTITY_ICON_AUTH0`  | `!define IDENTITY_ICON_AUTH0(_color, _scale) SPRITE_PUT(IDENTITY_icon_auth0, _color, _scale)` |
+| `icon_authorization_server`     | `IDENTITY_ICON_AUTHORIZATION_SERVER`  | `!define IDENTITY_ICON_AUTHORIZATION_SERVER(_color, _scale) SPRITE_PUT(IDENTITY_icon_authorization_server, _color, _scale)` |
+| `icon_backend`                 | `IDENTITY_ICON_BACKEND`  | `!define IDENTITY_ICON_BACKEND(_color, _scale) SPRITE_PUT(IDENTITY_icon_backend, _color, _scale)` |
+| `icon_biometrics`              | `IDENTITY_ICON_BIOMETRICS`  | `!define IDENTITY_ICON_BIOMETRICS(_color, _scale) SPRITE_PUT(IDENTITY_icon_biometrics, _color, _scale)` |
+| `icon_certificate`             | `IDENTITY_ICON_CERTIFICATE`  | `!define IDENTITY_ICON_CERTIFICATE(_color, _scale) SPRITE_PUT(IDENTITY_icon_certificate, _color, _scale)` |
 
-Enjoy!
+_For the full list of sprites, please refer to the [sprite index](meta/index.md)._
 
+## Example Diagram
 
-## Example
+Here is an example PlantUML diagram using the generated sprites:
 
 ```plantuml
 @startuml
-title Icon Theming Demonstration
-skinparam backgroundcolor transparent
+!define spriteURL https://raw.githubusercontent.com/sleepstate/plantuml-identity-sprites/main/puml/
 
-!define ID1_ICON_ACCESS_TOKEN SPRITE
-folder "ICON_ACCESS_TOKEN" {
-  entity "ICON_ACCESS_TOKEN in black" as ID1_ICON_ACCESS_TOKEN_black <<black>>
-  entity "ICON_ACCESS_TOKEN in red" as ID1_ICON_ACCESS_TOKEN_red <<red>>
-  entity "ICON_ACCESS_TOKEN in blue" as ID1_ICON_ACCESS_TOKEN_blue <<blue>>
-  entity "ICON_ACCESS_TOKEN in green" as ID1_ICON_ACCESS_TOKEN_green <<green>>
-  entity "ICON_ACCESS_TOKEN in yellow" as ID1_ICON_ACCESS_TOKEN_yellow <<yellow>>
-}
+!include spriteURL/icon_access_token.puml
+!include spriteURL/icon_backend.puml
+!include spriteURL/icon_api.puml
 
-!define ID1_ICON_API SPRITE
-folder "ICON_API" {
-  entity "ICON_API in black" as ID1_ICON_API_black <<black>>
-  entity "ICON_API in red" as ID1_ICON_API_red <<red>>
-  entity "ICON_API in blue" as ID1_ICON_API_blue <<blue>>
-  entity "ICON_API in green" as ID1_ICON_API_green <<green>>
-  entity "ICON_API in yellow" as ID1_ICON_API_yellow <<yellow>>
-}
+IDENTITY_ICON_ACCESS_TOKEN("green", 1.2)
+IDENTITY_ICON_BACKEND("#FFDD00", 1.5)
+IDENTITY_ICON_API("blue", 1.0)
 @enduml
-
 ```
+
+This code will render the icons `icon_access_token`, `icon_backend`, and `icon_api` with the specified colors and scales.
+
+## Customizing the Sprites
+
+The generated PlantUML sprite macros allow for customization with the following parameters:
+- **_color**: The color of the sprite (e.g., `red`, `#FF0000`).
+- **_scale**: Scaling factor for the size of the sprite.
+
+### Example Customization
+
+```plantuml
+@startuml
+IDENTITY_ICON_ACCESS_TOKEN("#00FF00", 2)    ' Large green icon
+IDENTITY_ICON_BACKEND("blue", 1.5)          ' Scaled blue icon
+@enduml
+```
+
+## Troubleshooting
+
+If you encounter any issues, check the `meta/sprite_report.log` for detailed logs of the sprite generation process.
+
+## Contributing
+
+We welcome contributions! Please submit pull requests for new icons, bug fixes, or other improvements.
+
+### Adding New Icons
+
+1. Add your PNG or SVG icons to the `icons/png` or `icons/svg` directories, respectively.
+2. Run the `create_sprites.sh` script with your preferred prefix.
+3. Commit the generated files in `puml/`, `meta/`, and any updated diagrams.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+For more details on using PlantUML sprites, check out the [official documentation](http://plantuml.com/sprite).
