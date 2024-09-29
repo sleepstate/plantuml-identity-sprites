@@ -1,0 +1,20 @@
+// Icon Theming Demonstration
+digraph {
+	bgcolor=transparent fontsize=20 label="Icon Theming Demonstration" labelloc=t
+	subgraph cluster_ACCESS_TOKEN {
+		label=ICON_ACCESS_TOKEN style=dashed
+		ID1_ACCESS_TOKEN_black [label="ICON_ACCESS_TOKEN #black" color=black fontcolor=white style=filled]
+		ID1_ACCESS_TOKEN_red [label="ICON_ACCESS_TOKEN #red" color=red style=filled]
+		ID1_ACCESS_TOKEN_blue [label="ICON_ACCESS_TOKEN #blue" color=blue style=filled]
+		ID1_ACCESS_TOKEN_green [label="ICON_ACCESS_TOKEN #green" color=green style=filled]
+		ID1_ACCESS_TOKEN_yellow [label="ICON_ACCESS_TOKEN #yellow" color=yellow fontcolor=black style=filled]
+	}
+	subgraph cluster_API {
+		label=ICON_API style=dashed
+		ID1_API_black [label="ICON_API #black" color=black fontcolor=white style=filled]
+		ID1_API_red [label="ICON_API #red" color=red style=filled]
+		ID1_API_blue [label="ICON_API #blue" color=blue style=filled]
+		ID1_API_green [label="ICON_API #green" color=green style=filled]
+		ID1_API_yellow [label="ICON_API #yellow" color=yellow fontcolor=black style=filled]
+	}
+}

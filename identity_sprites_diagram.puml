@@ -1,0 +1,25 @@
+
+@startuml
+!include https://raw.githubusercontent.com/sleepstate/plantuml-identity-sprites/refs/heads/main/common.puml
+hide stereotype
+title Icon Theming Demonstration
+skinparam backgroundcolor transparent
+
+' ICON_ACCESS_TOKEN
+folder "ICON_ACCESS_TOKEN" {
+  ID1_ICON_ACCESS_TOKEN #black
+  ID1_ICON_ACCESS_TOKEN #red
+  ID1_ICON_ACCESS_TOKEN #blue
+  ID1_ICON_ACCESS_TOKEN #green
+  ID1_ICON_ACCESS_TOKEN #yellow
+}
+
+' ICON_API
+folder "ICON_API" {
+  ID1_ICON_API #black
+  ID1_ICON_API #red
+  ID1_ICON_API #blue
+  ID1_ICON_API #green
+  ID1_ICON_API #yellow
+}
+@enduml

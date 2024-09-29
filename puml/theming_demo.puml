@@ -1,0 +1,940 @@
+@startuml
+title Icon Theming Demonstration
+skinparam backgroundcolor transparent
+!define ID1_ICON_ACCESS_TOKEN SPRITE
+folder "ICON_ACCESS_TOKEN" {
+  entity "ICON_ACCESS_TOKEN in black" as ID1_ICON_ACCESS_TOKEN_black <<black>>
+  entity "ICON_ACCESS_TOKEN in red" as ID1_ICON_ACCESS_TOKEN_red <<red>>
+  entity "ICON_ACCESS_TOKEN in blue" as ID1_ICON_ACCESS_TOKEN_blue <<blue>>
+  entity "ICON_ACCESS_TOKEN in green" as ID1_ICON_ACCESS_TOKEN_green <<green>>
+  entity "ICON_ACCESS_TOKEN in yellow" as ID1_ICON_ACCESS_TOKEN_yellow <<yellow>>
+}
+!define ID1_ICON_ACCOUNT_TAKEOVER SPRITE
+folder "ICON_ACCOUNT_TAKEOVER" {
+  entity "ICON_ACCOUNT_TAKEOVER in black" as ID1_ICON_ACCOUNT_TAKEOVER_black <<black>>
+  entity "ICON_ACCOUNT_TAKEOVER in red" as ID1_ICON_ACCOUNT_TAKEOVER_red <<red>>
+  entity "ICON_ACCOUNT_TAKEOVER in blue" as ID1_ICON_ACCOUNT_TAKEOVER_blue <<blue>>
+  entity "ICON_ACCOUNT_TAKEOVER in green" as ID1_ICON_ACCOUNT_TAKEOVER_green <<green>>
+  entity "ICON_ACCOUNT_TAKEOVER in yellow" as ID1_ICON_ACCOUNT_TAKEOVER_yellow <<yellow>>
+}
+!define ID1_ICON_ACTIONS SPRITE
+folder "ICON_ACTIONS" {
+  entity "ICON_ACTIONS in black" as ID1_ICON_ACTIONS_black <<black>>
+  entity "ICON_ACTIONS in red" as ID1_ICON_ACTIONS_red <<red>>
+  entity "ICON_ACTIONS in blue" as ID1_ICON_ACTIONS_blue <<blue>>
+  entity "ICON_ACTIONS in green" as ID1_ICON_ACTIONS_green <<green>>
+  entity "ICON_ACTIONS in yellow" as ID1_ICON_ACTIONS_yellow <<yellow>>
+}
+!define ID1_ICON_ACTIVITY SPRITE
+folder "ICON_ACTIVITY" {
+  entity "ICON_ACTIVITY in black" as ID1_ICON_ACTIVITY_black <<black>>
+  entity "ICON_ACTIVITY in red" as ID1_ICON_ACTIVITY_red <<red>>
+  entity "ICON_ACTIVITY in blue" as ID1_ICON_ACTIVITY_blue <<blue>>
+  entity "ICON_ACTIVITY in green" as ID1_ICON_ACTIVITY_green <<green>>
+  entity "ICON_ACTIVITY in yellow" as ID1_ICON_ACTIVITY_yellow <<yellow>>
+}
+!define ID1_ICON_ADVANCED_OPTIONS SPRITE
+folder "ICON_ADVANCED_OPTIONS" {
+  entity "ICON_ADVANCED_OPTIONS in black" as ID1_ICON_ADVANCED_OPTIONS_black <<black>>
+  entity "ICON_ADVANCED_OPTIONS in red" as ID1_ICON_ADVANCED_OPTIONS_red <<red>>
+  entity "ICON_ADVANCED_OPTIONS in blue" as ID1_ICON_ADVANCED_OPTIONS_blue <<blue>>
+  entity "ICON_ADVANCED_OPTIONS in green" as ID1_ICON_ADVANCED_OPTIONS_green <<green>>
+  entity "ICON_ADVANCED_OPTIONS in yellow" as ID1_ICON_ADVANCED_OPTIONS_yellow <<yellow>>
+}
+!define ID1_ICON_ANTICIPATION SPRITE
+folder "ICON_ANTICIPATION" {
+  entity "ICON_ANTICIPATION in black" as ID1_ICON_ANTICIPATION_black <<black>>
+  entity "ICON_ANTICIPATION in red" as ID1_ICON_ANTICIPATION_red <<red>>
+  entity "ICON_ANTICIPATION in blue" as ID1_ICON_ANTICIPATION_blue <<blue>>
+  entity "ICON_ANTICIPATION in green" as ID1_ICON_ANTICIPATION_green <<green>>
+  entity "ICON_ANTICIPATION in yellow" as ID1_ICON_ANTICIPATION_yellow <<yellow>>
+}
+!define ID1_ICON_API SPRITE
+folder "ICON_API" {
+  entity "ICON_API in black" as ID1_ICON_API_black <<black>>
+  entity "ICON_API in red" as ID1_ICON_API_red <<red>>
+  entity "ICON_API in blue" as ID1_ICON_API_blue <<blue>>
+  entity "ICON_API in green" as ID1_ICON_API_green <<green>>
+  entity "ICON_API in yellow" as ID1_ICON_API_yellow <<yellow>>
+}
+!define ID1_ICON_API_RELATED SPRITE
+folder "ICON_API_RELATED" {
+  entity "ICON_API_RELATED in black" as ID1_ICON_API_RELATED_black <<black>>
+  entity "ICON_API_RELATED in red" as ID1_ICON_API_RELATED_red <<red>>
+  entity "ICON_API_RELATED in blue" as ID1_ICON_API_RELATED_blue <<blue>>
+  entity "ICON_API_RELATED in green" as ID1_ICON_API_RELATED_green <<green>>
+  entity "ICON_API_RELATED in yellow" as ID1_ICON_API_RELATED_yellow <<yellow>>
+}
+!define ID1_ICON_APPLICATIONS SPRITE
+folder "ICON_APPLICATIONS" {
+  entity "ICON_APPLICATIONS in black" as ID1_ICON_APPLICATIONS_black <<black>>
+  entity "ICON_APPLICATIONS in red" as ID1_ICON_APPLICATIONS_red <<red>>
+  entity "ICON_APPLICATIONS in blue" as ID1_ICON_APPLICATIONS_blue <<blue>>
+  entity "ICON_APPLICATIONS in green" as ID1_ICON_APPLICATIONS_green <<green>>
+  entity "ICON_APPLICATIONS in yellow" as ID1_ICON_APPLICATIONS_yellow <<yellow>>
+}
+!define ID1_ICON_ATTRIBUTES SPRITE
+folder "ICON_ATTRIBUTES" {
+  entity "ICON_ATTRIBUTES in black" as ID1_ICON_ATTRIBUTES_black <<black>>
+  entity "ICON_ATTRIBUTES in red" as ID1_ICON_ATTRIBUTES_red <<red>>
+  entity "ICON_ATTRIBUTES in blue" as ID1_ICON_ATTRIBUTES_blue <<blue>>
+  entity "ICON_ATTRIBUTES in green" as ID1_ICON_ATTRIBUTES_green <<green>>
+  entity "ICON_ATTRIBUTES in yellow" as ID1_ICON_ATTRIBUTES_yellow <<yellow>>
+}
+!define ID1_ICON_AUTH0 SPRITE
+folder "ICON_AUTH0" {
+  entity "ICON_AUTH0 in black" as ID1_ICON_AUTH0_black <<black>>
+  entity "ICON_AUTH0 in red" as ID1_ICON_AUTH0_red <<red>>
+  entity "ICON_AUTH0 in blue" as ID1_ICON_AUTH0_blue <<blue>>
+  entity "ICON_AUTH0 in green" as ID1_ICON_AUTH0_green <<green>>
+  entity "ICON_AUTH0 in yellow" as ID1_ICON_AUTH0_yellow <<yellow>>
+}
+!define ID1_ICON_AUTH0_AUTHORIZATION_SERVER SPRITE
+folder "ICON_AUTH0_AUTHORIZATION_SERVER" {
+  entity "ICON_AUTH0_AUTHORIZATION_SERVER in black" as ID1_ICON_AUTH0_AUTHORIZATION_SERVER_black <<black>>
+  entity "ICON_AUTH0_AUTHORIZATION_SERVER in red" as ID1_ICON_AUTH0_AUTHORIZATION_SERVER_red <<red>>
+  entity "ICON_AUTH0_AUTHORIZATION_SERVER in blue" as ID1_ICON_AUTH0_AUTHORIZATION_SERVER_blue <<blue>>
+  entity "ICON_AUTH0_AUTHORIZATION_SERVER in green" as ID1_ICON_AUTH0_AUTHORIZATION_SERVER_green <<green>>
+  entity "ICON_AUTH0_AUTHORIZATION_SERVER in yellow" as ID1_ICON_AUTH0_AUTHORIZATION_SERVER_yellow <<yellow>>
+}
+!define ID1_ICON_AUTH0_DASHBOARD SPRITE
+folder "ICON_AUTH0_DASHBOARD" {
+  entity "ICON_AUTH0_DASHBOARD in black" as ID1_ICON_AUTH0_DASHBOARD_black <<black>>
+  entity "ICON_AUTH0_DASHBOARD in red" as ID1_ICON_AUTH0_DASHBOARD_red <<red>>
+  entity "ICON_AUTH0_DASHBOARD in blue" as ID1_ICON_AUTH0_DASHBOARD_blue <<blue>>
+  entity "ICON_AUTH0_DASHBOARD in green" as ID1_ICON_AUTH0_DASHBOARD_green <<green>>
+  entity "ICON_AUTH0_DASHBOARD in yellow" as ID1_ICON_AUTH0_DASHBOARD_yellow <<yellow>>
+}
+!define ID1_ICON_AUTH0_LOGO_DARK SPRITE
+folder "ICON_AUTH0_LOGO_DARK" {
+  entity "ICON_AUTH0_LOGO_DARK in black" as ID1_ICON_AUTH0_LOGO_DARK_black <<black>>
+  entity "ICON_AUTH0_LOGO_DARK in red" as ID1_ICON_AUTH0_LOGO_DARK_red <<red>>
+  entity "ICON_AUTH0_LOGO_DARK in blue" as ID1_ICON_AUTH0_LOGO_DARK_blue <<blue>>
+  entity "ICON_AUTH0_LOGO_DARK in green" as ID1_ICON_AUTH0_LOGO_DARK_green <<green>>
+  entity "ICON_AUTH0_LOGO_DARK in yellow" as ID1_ICON_AUTH0_LOGO_DARK_yellow <<yellow>>
+}
+!define ID1_ICON_AUTH0_LOGO_LIGHT SPRITE
+folder "ICON_AUTH0_LOGO_LIGHT" {
+  entity "ICON_AUTH0_LOGO_LIGHT in black" as ID1_ICON_AUTH0_LOGO_LIGHT_black <<black>>
+  entity "ICON_AUTH0_LOGO_LIGHT in red" as ID1_ICON_AUTH0_LOGO_LIGHT_red <<red>>
+  entity "ICON_AUTH0_LOGO_LIGHT in blue" as ID1_ICON_AUTH0_LOGO_LIGHT_blue <<blue>>
+  entity "ICON_AUTH0_LOGO_LIGHT in green" as ID1_ICON_AUTH0_LOGO_LIGHT_green <<green>>
+  entity "ICON_AUTH0_LOGO_LIGHT in yellow" as ID1_ICON_AUTH0_LOGO_LIGHT_yellow <<yellow>>
+}
+!define ID1_ICON_AUTHENTICATION_A SPRITE
+folder "ICON_AUTHENTICATION_A" {
+  entity "ICON_AUTHENTICATION_A in black" as ID1_ICON_AUTHENTICATION_A_black <<black>>
+  entity "ICON_AUTHENTICATION_A in red" as ID1_ICON_AUTHENTICATION_A_red <<red>>
+  entity "ICON_AUTHENTICATION_A in blue" as ID1_ICON_AUTHENTICATION_A_blue <<blue>>
+  entity "ICON_AUTHENTICATION_A in green" as ID1_ICON_AUTHENTICATION_A_green <<green>>
+  entity "ICON_AUTHENTICATION_A in yellow" as ID1_ICON_AUTHENTICATION_A_yellow <<yellow>>
+}
+!define ID1_ICON_AUTHENTICATION_B SPRITE
+folder "ICON_AUTHENTICATION_B" {
+  entity "ICON_AUTHENTICATION_B in black" as ID1_ICON_AUTHENTICATION_B_black <<black>>
+  entity "ICON_AUTHENTICATION_B in red" as ID1_ICON_AUTHENTICATION_B_red <<red>>
+  entity "ICON_AUTHENTICATION_B in blue" as ID1_ICON_AUTHENTICATION_B_blue <<blue>>
+  entity "ICON_AUTHENTICATION_B in green" as ID1_ICON_AUTHENTICATION_B_green <<green>>
+  entity "ICON_AUTHENTICATION_B in yellow" as ID1_ICON_AUTHENTICATION_B_yellow <<yellow>>
+}
+!define ID1_ICON_AUTHORIZATION_SERVER SPRITE
+folder "ICON_AUTHORIZATION_SERVER" {
+  entity "ICON_AUTHORIZATION_SERVER in black" as ID1_ICON_AUTHORIZATION_SERVER_black <<black>>
+  entity "ICON_AUTHORIZATION_SERVER in red" as ID1_ICON_AUTHORIZATION_SERVER_red <<red>>
+  entity "ICON_AUTHORIZATION_SERVER in blue" as ID1_ICON_AUTHORIZATION_SERVER_blue <<blue>>
+  entity "ICON_AUTHORIZATION_SERVER in green" as ID1_ICON_AUTHORIZATION_SERVER_green <<green>>
+  entity "ICON_AUTHORIZATION_SERVER in yellow" as ID1_ICON_AUTHORIZATION_SERVER_yellow <<yellow>>
+}
+!define ID1_ICON_BACKEND SPRITE
+folder "ICON_BACKEND" {
+  entity "ICON_BACKEND in black" as ID1_ICON_BACKEND_black <<black>>
+  entity "ICON_BACKEND in red" as ID1_ICON_BACKEND_red <<red>>
+  entity "ICON_BACKEND in blue" as ID1_ICON_BACKEND_blue <<blue>>
+  entity "ICON_BACKEND in green" as ID1_ICON_BACKEND_green <<green>>
+  entity "ICON_BACKEND in yellow" as ID1_ICON_BACKEND_yellow <<yellow>>
+}
+!define ID1_ICON_BIOMETRICS SPRITE
+folder "ICON_BIOMETRICS" {
+  entity "ICON_BIOMETRICS in black" as ID1_ICON_BIOMETRICS_black <<black>>
+  entity "ICON_BIOMETRICS in red" as ID1_ICON_BIOMETRICS_red <<red>>
+  entity "ICON_BIOMETRICS in blue" as ID1_ICON_BIOMETRICS_blue <<blue>>
+  entity "ICON_BIOMETRICS in green" as ID1_ICON_BIOMETRICS_green <<green>>
+  entity "ICON_BIOMETRICS in yellow" as ID1_ICON_BIOMETRICS_yellow <<yellow>>
+}
+!define ID1_ICON_BOT_DETECTION SPRITE
+folder "ICON_BOT_DETECTION" {
+  entity "ICON_BOT_DETECTION in black" as ID1_ICON_BOT_DETECTION_black <<black>>
+  entity "ICON_BOT_DETECTION in red" as ID1_ICON_BOT_DETECTION_red <<red>>
+  entity "ICON_BOT_DETECTION in blue" as ID1_ICON_BOT_DETECTION_blue <<blue>>
+  entity "ICON_BOT_DETECTION in green" as ID1_ICON_BOT_DETECTION_green <<green>>
+  entity "ICON_BOT_DETECTION in yellow" as ID1_ICON_BOT_DETECTION_yellow <<yellow>>
+}
+!define ID1_ICON_BOUNDARY_PROTOCOL SPRITE
+folder "ICON_BOUNDARY_PROTOCOL" {
+  entity "ICON_BOUNDARY_PROTOCOL in black" as ID1_ICON_BOUNDARY_PROTOCOL_black <<black>>
+  entity "ICON_BOUNDARY_PROTOCOL in red" as ID1_ICON_BOUNDARY_PROTOCOL_red <<red>>
+  entity "ICON_BOUNDARY_PROTOCOL in blue" as ID1_ICON_BOUNDARY_PROTOCOL_blue <<blue>>
+  entity "ICON_BOUNDARY_PROTOCOL in green" as ID1_ICON_BOUNDARY_PROTOCOL_green <<green>>
+  entity "ICON_BOUNDARY_PROTOCOL in yellow" as ID1_ICON_BOUNDARY_PROTOCOL_yellow <<yellow>>
+}
+!define ID1_ICON_BRANDING SPRITE
+folder "ICON_BRANDING" {
+  entity "ICON_BRANDING in black" as ID1_ICON_BRANDING_black <<black>>
+  entity "ICON_BRANDING in red" as ID1_ICON_BRANDING_red <<red>>
+  entity "ICON_BRANDING in blue" as ID1_ICON_BRANDING_blue <<blue>>
+  entity "ICON_BRANDING in green" as ID1_ICON_BRANDING_green <<green>>
+  entity "ICON_BRANDING in yellow" as ID1_ICON_BRANDING_yellow <<yellow>>
+}
+!define ID1_ICON_BREACHED_PASSWORD SPRITE
+folder "ICON_BREACHED_PASSWORD" {
+  entity "ICON_BREACHED_PASSWORD in black" as ID1_ICON_BREACHED_PASSWORD_black <<black>>
+  entity "ICON_BREACHED_PASSWORD in red" as ID1_ICON_BREACHED_PASSWORD_red <<red>>
+  entity "ICON_BREACHED_PASSWORD in blue" as ID1_ICON_BREACHED_PASSWORD_blue <<blue>>
+  entity "ICON_BREACHED_PASSWORD in green" as ID1_ICON_BREACHED_PASSWORD_green <<green>>
+  entity "ICON_BREACHED_PASSWORD in yellow" as ID1_ICON_BREACHED_PASSWORD_yellow <<yellow>>
+}
+!define ID1_ICON_BROWSER SPRITE
+folder "ICON_BROWSER" {
+  entity "ICON_BROWSER in black" as ID1_ICON_BROWSER_black <<black>>
+  entity "ICON_BROWSER in red" as ID1_ICON_BROWSER_red <<red>>
+  entity "ICON_BROWSER in blue" as ID1_ICON_BROWSER_blue <<blue>>
+  entity "ICON_BROWSER in green" as ID1_ICON_BROWSER_green <<green>>
+  entity "ICON_BROWSER in yellow" as ID1_ICON_BROWSER_yellow <<yellow>>
+}
+!define ID1_ICON_BRUTE_FORCE SPRITE
+folder "ICON_BRUTE_FORCE" {
+  entity "ICON_BRUTE_FORCE in black" as ID1_ICON_BRUTE_FORCE_black <<black>>
+  entity "ICON_BRUTE_FORCE in red" as ID1_ICON_BRUTE_FORCE_red <<red>>
+  entity "ICON_BRUTE_FORCE in blue" as ID1_ICON_BRUTE_FORCE_blue <<blue>>
+  entity "ICON_BRUTE_FORCE in green" as ID1_ICON_BRUTE_FORCE_green <<green>>
+  entity "ICON_BRUTE_FORCE in yellow" as ID1_ICON_BRUTE_FORCE_yellow <<yellow>>
+}
+!define ID1_ICON_CERTIFICATE SPRITE
+folder "ICON_CERTIFICATE" {
+  entity "ICON_CERTIFICATE in black" as ID1_ICON_CERTIFICATE_black <<black>>
+  entity "ICON_CERTIFICATE in red" as ID1_ICON_CERTIFICATE_red <<red>>
+  entity "ICON_CERTIFICATE in blue" as ID1_ICON_CERTIFICATE_blue <<blue>>
+  entity "ICON_CERTIFICATE in green" as ID1_ICON_CERTIFICATE_green <<green>>
+  entity "ICON_CERTIFICATE in yellow" as ID1_ICON_CERTIFICATE_yellow <<yellow>>
+}
+!define ID1_ICON_CLI_SCRIPT SPRITE
+folder "ICON_CLI_SCRIPT" {
+  entity "ICON_CLI_SCRIPT in black" as ID1_ICON_CLI_SCRIPT_black <<black>>
+  entity "ICON_CLI_SCRIPT in red" as ID1_ICON_CLI_SCRIPT_red <<red>>
+  entity "ICON_CLI_SCRIPT in blue" as ID1_ICON_CLI_SCRIPT_blue <<blue>>
+  entity "ICON_CLI_SCRIPT in green" as ID1_ICON_CLI_SCRIPT_green <<green>>
+  entity "ICON_CLI_SCRIPT in yellow" as ID1_ICON_CLI_SCRIPT_yellow <<yellow>>
+}
+!define ID1_ICON_CLOUD SPRITE
+folder "ICON_CLOUD" {
+  entity "ICON_CLOUD in black" as ID1_ICON_CLOUD_black <<black>>
+  entity "ICON_CLOUD in red" as ID1_ICON_CLOUD_red <<red>>
+  entity "ICON_CLOUD in blue" as ID1_ICON_CLOUD_blue <<blue>>
+  entity "ICON_CLOUD in green" as ID1_ICON_CLOUD_green <<green>>
+  entity "ICON_CLOUD in yellow" as ID1_ICON_CLOUD_yellow <<yellow>>
+}
+!define ID1_ICON_CONSISTENCY SPRITE
+folder "ICON_CONSISTENCY" {
+  entity "ICON_CONSISTENCY in black" as ID1_ICON_CONSISTENCY_black <<black>>
+  entity "ICON_CONSISTENCY in red" as ID1_ICON_CONSISTENCY_red <<red>>
+  entity "ICON_CONSISTENCY in blue" as ID1_ICON_CONSISTENCY_blue <<blue>>
+  entity "ICON_CONSISTENCY in green" as ID1_ICON_CONSISTENCY_green <<green>>
+  entity "ICON_CONSISTENCY in yellow" as ID1_ICON_CONSISTENCY_yellow <<yellow>>
+}
+!define ID1_ICON_COOKIE SPRITE
+folder "ICON_COOKIE" {
+  entity "ICON_COOKIE in black" as ID1_ICON_COOKIE_black <<black>>
+  entity "ICON_COOKIE in red" as ID1_ICON_COOKIE_red <<red>>
+  entity "ICON_COOKIE in blue" as ID1_ICON_COOKIE_blue <<blue>>
+  entity "ICON_COOKIE in green" as ID1_ICON_COOKIE_green <<green>>
+  entity "ICON_COOKIE in yellow" as ID1_ICON_COOKIE_yellow <<yellow>>
+}
+!define ID1_ICON_COOKIES SPRITE
+folder "ICON_COOKIES" {
+  entity "ICON_COOKIES in black" as ID1_ICON_COOKIES_black <<black>>
+  entity "ICON_COOKIES in red" as ID1_ICON_COOKIES_red <<red>>
+  entity "ICON_COOKIES in blue" as ID1_ICON_COOKIES_blue <<blue>>
+  entity "ICON_COOKIES in green" as ID1_ICON_COOKIES_green <<green>>
+  entity "ICON_COOKIES in yellow" as ID1_ICON_COOKIES_yellow <<yellow>>
+}
+!define ID1_ICON_CREDENTIAL_APPLICATION SPRITE
+folder "ICON_CREDENTIAL_APPLICATION" {
+  entity "ICON_CREDENTIAL_APPLICATION in black" as ID1_ICON_CREDENTIAL_APPLICATION_black <<black>>
+  entity "ICON_CREDENTIAL_APPLICATION in red" as ID1_ICON_CREDENTIAL_APPLICATION_red <<red>>
+  entity "ICON_CREDENTIAL_APPLICATION in blue" as ID1_ICON_CREDENTIAL_APPLICATION_blue <<blue>>
+  entity "ICON_CREDENTIAL_APPLICATION in green" as ID1_ICON_CREDENTIAL_APPLICATION_green <<green>>
+  entity "ICON_CREDENTIAL_APPLICATION in yellow" as ID1_ICON_CREDENTIAL_APPLICATION_yellow <<yellow>>
+}
+!define ID1_ICON_CREDENTIAL_STUFFING SPRITE
+folder "ICON_CREDENTIAL_STUFFING" {
+  entity "ICON_CREDENTIAL_STUFFING in black" as ID1_ICON_CREDENTIAL_STUFFING_black <<black>>
+  entity "ICON_CREDENTIAL_STUFFING in red" as ID1_ICON_CREDENTIAL_STUFFING_red <<red>>
+  entity "ICON_CREDENTIAL_STUFFING in blue" as ID1_ICON_CREDENTIAL_STUFFING_blue <<blue>>
+  entity "ICON_CREDENTIAL_STUFFING in green" as ID1_ICON_CREDENTIAL_STUFFING_green <<green>>
+  entity "ICON_CREDENTIAL_STUFFING in yellow" as ID1_ICON_CREDENTIAL_STUFFING_yellow <<yellow>>
+}
+!define ID1_ICON_CREDENTIAL_USER SPRITE
+folder "ICON_CREDENTIAL_USER" {
+  entity "ICON_CREDENTIAL_USER in black" as ID1_ICON_CREDENTIAL_USER_black <<black>>
+  entity "ICON_CREDENTIAL_USER in red" as ID1_ICON_CREDENTIAL_USER_red <<red>>
+  entity "ICON_CREDENTIAL_USER in blue" as ID1_ICON_CREDENTIAL_USER_blue <<blue>>
+  entity "ICON_CREDENTIAL_USER in green" as ID1_ICON_CREDENTIAL_USER_green <<green>>
+  entity "ICON_CREDENTIAL_USER in yellow" as ID1_ICON_CREDENTIAL_USER_yellow <<yellow>>
+}
+!define ID1_ICON_CUSTOMIZATION SPRITE
+folder "ICON_CUSTOMIZATION" {
+  entity "ICON_CUSTOMIZATION in black" as ID1_ICON_CUSTOMIZATION_black <<black>>
+  entity "ICON_CUSTOMIZATION in red" as ID1_ICON_CUSTOMIZATION_red <<red>>
+  entity "ICON_CUSTOMIZATION in blue" as ID1_ICON_CUSTOMIZATION_blue <<blue>>
+  entity "ICON_CUSTOMIZATION in green" as ID1_ICON_CUSTOMIZATION_green <<green>>
+  entity "ICON_CUSTOMIZATION in yellow" as ID1_ICON_CUSTOMIZATION_yellow <<yellow>>
+}
+!define ID1_ICON_DASHBOARD SPRITE
+folder "ICON_DASHBOARD" {
+  entity "ICON_DASHBOARD in black" as ID1_ICON_DASHBOARD_black <<black>>
+  entity "ICON_DASHBOARD in red" as ID1_ICON_DASHBOARD_red <<red>>
+  entity "ICON_DASHBOARD in blue" as ID1_ICON_DASHBOARD_blue <<blue>>
+  entity "ICON_DASHBOARD in green" as ID1_ICON_DASHBOARD_green <<green>>
+  entity "ICON_DASHBOARD in yellow" as ID1_ICON_DASHBOARD_yellow <<yellow>>
+}
+!define ID1_ICON_DATABASE SPRITE
+folder "ICON_DATABASE" {
+  entity "ICON_DATABASE in black" as ID1_ICON_DATABASE_black <<black>>
+  entity "ICON_DATABASE in red" as ID1_ICON_DATABASE_red <<red>>
+  entity "ICON_DATABASE in blue" as ID1_ICON_DATABASE_blue <<blue>>
+  entity "ICON_DATABASE in green" as ID1_ICON_DATABASE_green <<green>>
+  entity "ICON_DATABASE in yellow" as ID1_ICON_DATABASE_yellow <<yellow>>
+}
+!define ID1_ICON_DESKTOP_APP SPRITE
+folder "ICON_DESKTOP_APP" {
+  entity "ICON_DESKTOP_APP in black" as ID1_ICON_DESKTOP_APP_black <<black>>
+  entity "ICON_DESKTOP_APP in red" as ID1_ICON_DESKTOP_APP_red <<red>>
+  entity "ICON_DESKTOP_APP in blue" as ID1_ICON_DESKTOP_APP_blue <<blue>>
+  entity "ICON_DESKTOP_APP in green" as ID1_ICON_DESKTOP_APP_green <<green>>
+  entity "ICON_DESKTOP_APP in yellow" as ID1_ICON_DESKTOP_APP_yellow <<yellow>>
+}
+!define ID1_ICON_DEVICE_BIOMETRICS SPRITE
+folder "ICON_DEVICE_BIOMETRICS" {
+  entity "ICON_DEVICE_BIOMETRICS in black" as ID1_ICON_DEVICE_BIOMETRICS_black <<black>>
+  entity "ICON_DEVICE_BIOMETRICS in red" as ID1_ICON_DEVICE_BIOMETRICS_red <<red>>
+  entity "ICON_DEVICE_BIOMETRICS in blue" as ID1_ICON_DEVICE_BIOMETRICS_blue <<blue>>
+  entity "ICON_DEVICE_BIOMETRICS in green" as ID1_ICON_DEVICE_BIOMETRICS_green <<green>>
+  entity "ICON_DEVICE_BIOMETRICS in yellow" as ID1_ICON_DEVICE_BIOMETRICS_yellow <<yellow>>
+}
+!define ID1_ICON_EFFICIENCY SPRITE
+folder "ICON_EFFICIENCY" {
+  entity "ICON_EFFICIENCY in black" as ID1_ICON_EFFICIENCY_black <<black>>
+  entity "ICON_EFFICIENCY in red" as ID1_ICON_EFFICIENCY_red <<red>>
+  entity "ICON_EFFICIENCY in blue" as ID1_ICON_EFFICIENCY_blue <<blue>>
+  entity "ICON_EFFICIENCY in green" as ID1_ICON_EFFICIENCY_green <<green>>
+  entity "ICON_EFFICIENCY in yellow" as ID1_ICON_EFFICIENCY_yellow <<yellow>>
+}
+!define ID1_ICON_EMPATHY SPRITE
+folder "ICON_EMPATHY" {
+  entity "ICON_EMPATHY in black" as ID1_ICON_EMPATHY_black <<black>>
+  entity "ICON_EMPATHY in red" as ID1_ICON_EMPATHY_red <<red>>
+  entity "ICON_EMPATHY in blue" as ID1_ICON_EMPATHY_blue <<blue>>
+  entity "ICON_EMPATHY in green" as ID1_ICON_EMPATHY_green <<green>>
+  entity "ICON_EMPATHY in yellow" as ID1_ICON_EMPATHY_yellow <<yellow>>
+}
+!define ID1_ICON_ENTERPRISE_DIRECTORY SPRITE
+folder "ICON_ENTERPRISE_DIRECTORY" {
+  entity "ICON_ENTERPRISE_DIRECTORY in black" as ID1_ICON_ENTERPRISE_DIRECTORY_black <<black>>
+  entity "ICON_ENTERPRISE_DIRECTORY in red" as ID1_ICON_ENTERPRISE_DIRECTORY_red <<red>>
+  entity "ICON_ENTERPRISE_DIRECTORY in blue" as ID1_ICON_ENTERPRISE_DIRECTORY_blue <<blue>>
+  entity "ICON_ENTERPRISE_DIRECTORY in green" as ID1_ICON_ENTERPRISE_DIRECTORY_green <<green>>
+  entity "ICON_ENTERPRISE_DIRECTORY in yellow" as ID1_ICON_ENTERPRISE_DIRECTORY_yellow <<yellow>>
+}
+!define ID1_ICON_EXTENSIONS SPRITE
+folder "ICON_EXTENSIONS" {
+  entity "ICON_EXTENSIONS in black" as ID1_ICON_EXTENSIONS_black <<black>>
+  entity "ICON_EXTENSIONS in red" as ID1_ICON_EXTENSIONS_red <<red>>
+  entity "ICON_EXTENSIONS in blue" as ID1_ICON_EXTENSIONS_blue <<blue>>
+  entity "ICON_EXTENSIONS in green" as ID1_ICON_EXTENSIONS_green <<green>>
+  entity "ICON_EXTENSIONS in yellow" as ID1_ICON_EXTENSIONS_yellow <<yellow>>
+}
+!define ID1_ICON_FINE_GRAINED_AUTHORIZATION SPRITE
+folder "ICON_FINE_GRAINED_AUTHORIZATION" {
+  entity "ICON_FINE_GRAINED_AUTHORIZATION in black" as ID1_ICON_FINE_GRAINED_AUTHORIZATION_black <<black>>
+  entity "ICON_FINE_GRAINED_AUTHORIZATION in red" as ID1_ICON_FINE_GRAINED_AUTHORIZATION_red <<red>>
+  entity "ICON_FINE_GRAINED_AUTHORIZATION in blue" as ID1_ICON_FINE_GRAINED_AUTHORIZATION_blue <<blue>>
+  entity "ICON_FINE_GRAINED_AUTHORIZATION in green" as ID1_ICON_FINE_GRAINED_AUTHORIZATION_green <<green>>
+  entity "ICON_FINE_GRAINED_AUTHORIZATION in yellow" as ID1_ICON_FINE_GRAINED_AUTHORIZATION_yellow <<yellow>>
+}
+!define ID1_ICON_GENERIC_ENTERPRISE_DIRECTORY SPRITE
+folder "ICON_GENERIC_ENTERPRISE_DIRECTORY" {
+  entity "ICON_GENERIC_ENTERPRISE_DIRECTORY in black" as ID1_ICON_GENERIC_ENTERPRISE_DIRECTORY_black <<black>>
+  entity "ICON_GENERIC_ENTERPRISE_DIRECTORY in red" as ID1_ICON_GENERIC_ENTERPRISE_DIRECTORY_red <<red>>
+  entity "ICON_GENERIC_ENTERPRISE_DIRECTORY in blue" as ID1_ICON_GENERIC_ENTERPRISE_DIRECTORY_blue <<blue>>
+  entity "ICON_GENERIC_ENTERPRISE_DIRECTORY in green" as ID1_ICON_GENERIC_ENTERPRISE_DIRECTORY_green <<green>>
+  entity "ICON_GENERIC_ENTERPRISE_DIRECTORY in yellow" as ID1_ICON_GENERIC_ENTERPRISE_DIRECTORY_yellow <<yellow>>
+}
+!define ID1_ICON_GETTING_STARTED SPRITE
+folder "ICON_GETTING_STARTED" {
+  entity "ICON_GETTING_STARTED in black" as ID1_ICON_GETTING_STARTED_black <<black>>
+  entity "ICON_GETTING_STARTED in red" as ID1_ICON_GETTING_STARTED_red <<red>>
+  entity "ICON_GETTING_STARTED in blue" as ID1_ICON_GETTING_STARTED_blue <<blue>>
+  entity "ICON_GETTING_STARTED in green" as ID1_ICON_GETTING_STARTED_green <<green>>
+  entity "ICON_GETTING_STARTED in yellow" as ID1_ICON_GETTING_STARTED_yellow <<yellow>>
+}
+!define ID1_ICON_GUARDIAN_PUSH_NOTIFICATION SPRITE
+folder "ICON_GUARDIAN_PUSH_NOTIFICATION" {
+  entity "ICON_GUARDIAN_PUSH_NOTIFICATION in black" as ID1_ICON_GUARDIAN_PUSH_NOTIFICATION_black <<black>>
+  entity "ICON_GUARDIAN_PUSH_NOTIFICATION in red" as ID1_ICON_GUARDIAN_PUSH_NOTIFICATION_red <<red>>
+  entity "ICON_GUARDIAN_PUSH_NOTIFICATION in blue" as ID1_ICON_GUARDIAN_PUSH_NOTIFICATION_blue <<blue>>
+  entity "ICON_GUARDIAN_PUSH_NOTIFICATION in green" as ID1_ICON_GUARDIAN_PUSH_NOTIFICATION_green <<green>>
+  entity "ICON_GUARDIAN_PUSH_NOTIFICATION in yellow" as ID1_ICON_GUARDIAN_PUSH_NOTIFICATION_yellow <<yellow>>
+}
+!define ID1_ICON_HELP SPRITE
+folder "ICON_HELP" {
+  entity "ICON_HELP in black" as ID1_ICON_HELP_black <<black>>
+  entity "ICON_HELP in red" as ID1_ICON_HELP_red <<red>>
+  entity "ICON_HELP in blue" as ID1_ICON_HELP_blue <<blue>>
+  entity "ICON_HELP in green" as ID1_ICON_HELP_green <<green>>
+  entity "ICON_HELP in yellow" as ID1_ICON_HELP_yellow <<yellow>>
+}
+!define ID1_ICON_ID_TOKEN SPRITE
+folder "ICON_ID_TOKEN" {
+  entity "ICON_ID_TOKEN in black" as ID1_ICON_ID_TOKEN_black <<black>>
+  entity "ICON_ID_TOKEN in red" as ID1_ICON_ID_TOKEN_red <<red>>
+  entity "ICON_ID_TOKEN in blue" as ID1_ICON_ID_TOKEN_blue <<blue>>
+  entity "ICON_ID_TOKEN in green" as ID1_ICON_ID_TOKEN_green <<green>>
+  entity "ICON_ID_TOKEN in yellow" as ID1_ICON_ID_TOKEN_yellow <<yellow>>
+}
+!define ID1_ICON_IDENTIFIER_FIRST SPRITE
+folder "ICON_IDENTIFIER_FIRST" {
+  entity "ICON_IDENTIFIER_FIRST in black" as ID1_ICON_IDENTIFIER_FIRST_black <<black>>
+  entity "ICON_IDENTIFIER_FIRST in red" as ID1_ICON_IDENTIFIER_FIRST_red <<red>>
+  entity "ICON_IDENTIFIER_FIRST in blue" as ID1_ICON_IDENTIFIER_FIRST_blue <<blue>>
+  entity "ICON_IDENTIFIER_FIRST in green" as ID1_ICON_IDENTIFIER_FIRST_green <<green>>
+  entity "ICON_IDENTIFIER_FIRST in yellow" as ID1_ICON_IDENTIFIER_FIRST_yellow <<yellow>>
+}
+!define ID1_ICON_IDENTIFIER_PASSWORD SPRITE
+folder "ICON_IDENTIFIER_PASSWORD" {
+  entity "ICON_IDENTIFIER_PASSWORD in black" as ID1_ICON_IDENTIFIER_PASSWORD_black <<black>>
+  entity "ICON_IDENTIFIER_PASSWORD in red" as ID1_ICON_IDENTIFIER_PASSWORD_red <<red>>
+  entity "ICON_IDENTIFIER_PASSWORD in blue" as ID1_ICON_IDENTIFIER_PASSWORD_blue <<blue>>
+  entity "ICON_IDENTIFIER_PASSWORD in green" as ID1_ICON_IDENTIFIER_PASSWORD_green <<green>>
+  entity "ICON_IDENTIFIER_PASSWORD in yellow" as ID1_ICON_IDENTIFIER_PASSWORD_yellow <<yellow>>
+}
+!define ID1_ICON_INTEGRATIONS_MARKETPLACE SPRITE
+folder "ICON_INTEGRATIONS_MARKETPLACE" {
+  entity "ICON_INTEGRATIONS_MARKETPLACE in black" as ID1_ICON_INTEGRATIONS_MARKETPLACE_black <<black>>
+  entity "ICON_INTEGRATIONS_MARKETPLACE in red" as ID1_ICON_INTEGRATIONS_MARKETPLACE_red <<red>>
+  entity "ICON_INTEGRATIONS_MARKETPLACE in blue" as ID1_ICON_INTEGRATIONS_MARKETPLACE_blue <<blue>>
+  entity "ICON_INTEGRATIONS_MARKETPLACE in green" as ID1_ICON_INTEGRATIONS_MARKETPLACE_green <<green>>
+  entity "ICON_INTEGRATIONS_MARKETPLACE in yellow" as ID1_ICON_INTEGRATIONS_MARKETPLACE_yellow <<yellow>>
+}
+!define ID1_ICON_IP_THROTTLING SPRITE
+folder "ICON_IP_THROTTLING" {
+  entity "ICON_IP_THROTTLING in black" as ID1_ICON_IP_THROTTLING_black <<black>>
+  entity "ICON_IP_THROTTLING in red" as ID1_ICON_IP_THROTTLING_red <<red>>
+  entity "ICON_IP_THROTTLING in blue" as ID1_ICON_IP_THROTTLING_blue <<blue>>
+  entity "ICON_IP_THROTTLING in green" as ID1_ICON_IP_THROTTLING_green <<green>>
+  entity "ICON_IP_THROTTLING in yellow" as ID1_ICON_IP_THROTTLING_yellow <<yellow>>
+}
+!define ID1_ICON_LOGIN SPRITE
+folder "ICON_LOGIN" {
+  entity "ICON_LOGIN in black" as ID1_ICON_LOGIN_black <<black>>
+  entity "ICON_LOGIN in red" as ID1_ICON_LOGIN_red <<red>>
+  entity "ICON_LOGIN in blue" as ID1_ICON_LOGIN_blue <<blue>>
+  entity "ICON_LOGIN in green" as ID1_ICON_LOGIN_green <<green>>
+  entity "ICON_LOGIN in yellow" as ID1_ICON_LOGIN_yellow <<yellow>>
+}
+!define ID1_ICON_LOGIN_CUSTOMIZATION SPRITE
+folder "ICON_LOGIN_CUSTOMIZATION" {
+  entity "ICON_LOGIN_CUSTOMIZATION in black" as ID1_ICON_LOGIN_CUSTOMIZATION_black <<black>>
+  entity "ICON_LOGIN_CUSTOMIZATION in red" as ID1_ICON_LOGIN_CUSTOMIZATION_red <<red>>
+  entity "ICON_LOGIN_CUSTOMIZATION in blue" as ID1_ICON_LOGIN_CUSTOMIZATION_blue <<blue>>
+  entity "ICON_LOGIN_CUSTOMIZATION in green" as ID1_ICON_LOGIN_CUSTOMIZATION_green <<green>>
+  entity "ICON_LOGIN_CUSTOMIZATION in yellow" as ID1_ICON_LOGIN_CUSTOMIZATION_yellow <<yellow>>
+}
+!define ID1_ICON_LOGS SPRITE
+folder "ICON_LOGS" {
+  entity "ICON_LOGS in black" as ID1_ICON_LOGS_black <<black>>
+  entity "ICON_LOGS in red" as ID1_ICON_LOGS_red <<red>>
+  entity "ICON_LOGS in blue" as ID1_ICON_LOGS_blue <<blue>>
+  entity "ICON_LOGS in green" as ID1_ICON_LOGS_green <<green>>
+  entity "ICON_LOGS in yellow" as ID1_ICON_LOGS_yellow <<yellow>>
+}
+!define ID1_ICON_MAIL_MESSAGE_A SPRITE
+folder "ICON_MAIL_MESSAGE_A" {
+  entity "ICON_MAIL_MESSAGE_A in black" as ID1_ICON_MAIL_MESSAGE_A_black <<black>>
+  entity "ICON_MAIL_MESSAGE_A in red" as ID1_ICON_MAIL_MESSAGE_A_red <<red>>
+  entity "ICON_MAIL_MESSAGE_A in blue" as ID1_ICON_MAIL_MESSAGE_A_blue <<blue>>
+  entity "ICON_MAIL_MESSAGE_A in green" as ID1_ICON_MAIL_MESSAGE_A_green <<green>>
+  entity "ICON_MAIL_MESSAGE_A in yellow" as ID1_ICON_MAIL_MESSAGE_A_yellow <<yellow>>
+}
+!define ID1_ICON_MAIL_MESSAGE_B SPRITE
+folder "ICON_MAIL_MESSAGE_B" {
+  entity "ICON_MAIL_MESSAGE_B in black" as ID1_ICON_MAIL_MESSAGE_B_black <<black>>
+  entity "ICON_MAIL_MESSAGE_B in red" as ID1_ICON_MAIL_MESSAGE_B_red <<red>>
+  entity "ICON_MAIL_MESSAGE_B in blue" as ID1_ICON_MAIL_MESSAGE_B_blue <<blue>>
+  entity "ICON_MAIL_MESSAGE_B in green" as ID1_ICON_MAIL_MESSAGE_B_green <<green>>
+  entity "ICON_MAIL_MESSAGE_B in yellow" as ID1_ICON_MAIL_MESSAGE_B_yellow <<yellow>>
+}
+!define ID1_ICON_MOBILE_APP SPRITE
+folder "ICON_MOBILE_APP" {
+  entity "ICON_MOBILE_APP in black" as ID1_ICON_MOBILE_APP_black <<black>>
+  entity "ICON_MOBILE_APP in red" as ID1_ICON_MOBILE_APP_red <<red>>
+  entity "ICON_MOBILE_APP in blue" as ID1_ICON_MOBILE_APP_blue <<blue>>
+  entity "ICON_MOBILE_APP in green" as ID1_ICON_MOBILE_APP_green <<green>>
+  entity "ICON_MOBILE_APP in yellow" as ID1_ICON_MOBILE_APP_yellow <<yellow>>
+}
+!define ID1_ICON_MONITORING SPRITE
+folder "ICON_MONITORING" {
+  entity "ICON_MONITORING in black" as ID1_ICON_MONITORING_black <<black>>
+  entity "ICON_MONITORING in red" as ID1_ICON_MONITORING_red <<red>>
+  entity "ICON_MONITORING in blue" as ID1_ICON_MONITORING_blue <<blue>>
+  entity "ICON_MONITORING in green" as ID1_ICON_MONITORING_green <<green>>
+  entity "ICON_MONITORING in yellow" as ID1_ICON_MONITORING_yellow <<yellow>>
+}
+!define ID1_ICON_MULTIFACTOR SPRITE
+folder "ICON_MULTIFACTOR" {
+  entity "ICON_MULTIFACTOR in black" as ID1_ICON_MULTIFACTOR_black <<black>>
+  entity "ICON_MULTIFACTOR in red" as ID1_ICON_MULTIFACTOR_red <<red>>
+  entity "ICON_MULTIFACTOR in blue" as ID1_ICON_MULTIFACTOR_blue <<blue>>
+  entity "ICON_MULTIFACTOR in green" as ID1_ICON_MULTIFACTOR_green <<green>>
+  entity "ICON_MULTIFACTOR in yellow" as ID1_ICON_MULTIFACTOR_yellow <<yellow>>
+}
+!define ID1_ICON_MULTIPLE_FAILED_LOGINS SPRITE
+folder "ICON_MULTIPLE_FAILED_LOGINS" {
+  entity "ICON_MULTIPLE_FAILED_LOGINS in black" as ID1_ICON_MULTIPLE_FAILED_LOGINS_black <<black>>
+  entity "ICON_MULTIPLE_FAILED_LOGINS in red" as ID1_ICON_MULTIPLE_FAILED_LOGINS_red <<red>>
+  entity "ICON_MULTIPLE_FAILED_LOGINS in blue" as ID1_ICON_MULTIPLE_FAILED_LOGINS_blue <<blue>>
+  entity "ICON_MULTIPLE_FAILED_LOGINS in green" as ID1_ICON_MULTIPLE_FAILED_LOGINS_green <<green>>
+  entity "ICON_MULTIPLE_FAILED_LOGINS in yellow" as ID1_ICON_MULTIPLE_FAILED_LOGINS_yellow <<yellow>>
+}
+!define ID1_ICON_ONE_TIME_PASSWORD SPRITE
+folder "ICON_ONE_TIME_PASSWORD" {
+  entity "ICON_ONE_TIME_PASSWORD in black" as ID1_ICON_ONE_TIME_PASSWORD_black <<black>>
+  entity "ICON_ONE_TIME_PASSWORD in red" as ID1_ICON_ONE_TIME_PASSWORD_red <<red>>
+  entity "ICON_ONE_TIME_PASSWORD in blue" as ID1_ICON_ONE_TIME_PASSWORD_blue <<blue>>
+  entity "ICON_ONE_TIME_PASSWORD in green" as ID1_ICON_ONE_TIME_PASSWORD_green <<green>>
+  entity "ICON_ONE_TIME_PASSWORD in yellow" as ID1_ICON_ONE_TIME_PASSWORD_yellow <<yellow>>
+}
+!define ID1_ICON_ORGANIZATIONS SPRITE
+folder "ICON_ORGANIZATIONS" {
+  entity "ICON_ORGANIZATIONS in black" as ID1_ICON_ORGANIZATIONS_black <<black>>
+  entity "ICON_ORGANIZATIONS in red" as ID1_ICON_ORGANIZATIONS_red <<red>>
+  entity "ICON_ORGANIZATIONS in blue" as ID1_ICON_ORGANIZATIONS_blue <<blue>>
+  entity "ICON_ORGANIZATIONS in green" as ID1_ICON_ORGANIZATIONS_green <<green>>
+  entity "ICON_ORGANIZATIONS in yellow" as ID1_ICON_ORGANIZATIONS_yellow <<yellow>>
+}
+!define ID1_ICON_PHONE_MESSAGE_A SPRITE
+folder "ICON_PHONE_MESSAGE_A" {
+  entity "ICON_PHONE_MESSAGE_A in black" as ID1_ICON_PHONE_MESSAGE_A_black <<black>>
+  entity "ICON_PHONE_MESSAGE_A in red" as ID1_ICON_PHONE_MESSAGE_A_red <<red>>
+  entity "ICON_PHONE_MESSAGE_A in blue" as ID1_ICON_PHONE_MESSAGE_A_blue <<blue>>
+  entity "ICON_PHONE_MESSAGE_A in green" as ID1_ICON_PHONE_MESSAGE_A_green <<green>>
+  entity "ICON_PHONE_MESSAGE_A in yellow" as ID1_ICON_PHONE_MESSAGE_A_yellow <<yellow>>
+}
+!define ID1_ICON_PHONE_MESSAGE_B_ SPRITE
+folder "ICON_PHONE_MESSAGE_B_" {
+  entity "ICON_PHONE_MESSAGE_B_ in black" as ID1_ICON_PHONE_MESSAGE_B__black <<black>>
+  entity "ICON_PHONE_MESSAGE_B_ in red" as ID1_ICON_PHONE_MESSAGE_B__red <<red>>
+  entity "ICON_PHONE_MESSAGE_B_ in blue" as ID1_ICON_PHONE_MESSAGE_B__blue <<blue>>
+  entity "ICON_PHONE_MESSAGE_B_ in green" as ID1_ICON_PHONE_MESSAGE_B__green <<green>>
+  entity "ICON_PHONE_MESSAGE_B_ in yellow" as ID1_ICON_PHONE_MESSAGE_B__yellow <<yellow>>
+}
+!define ID1_ICON_PIPELINE SPRITE
+folder "ICON_PIPELINE" {
+  entity "ICON_PIPELINE in black" as ID1_ICON_PIPELINE_black <<black>>
+  entity "ICON_PIPELINE in red" as ID1_ICON_PIPELINE_red <<red>>
+  entity "ICON_PIPELINE in blue" as ID1_ICON_PIPELINE_blue <<blue>>
+  entity "ICON_PIPELINE in green" as ID1_ICON_PIPELINE_green <<green>>
+  entity "ICON_PIPELINE in yellow" as ID1_ICON_PIPELINE_yellow <<yellow>>
+}
+!define ID1_ICON_PIPELINE_A SPRITE
+folder "ICON_PIPELINE_A" {
+  entity "ICON_PIPELINE_A in black" as ID1_ICON_PIPELINE_A_black <<black>>
+  entity "ICON_PIPELINE_A in red" as ID1_ICON_PIPELINE_A_red <<red>>
+  entity "ICON_PIPELINE_A in blue" as ID1_ICON_PIPELINE_A_blue <<blue>>
+  entity "ICON_PIPELINE_A in green" as ID1_ICON_PIPELINE_A_green <<green>>
+  entity "ICON_PIPELINE_A in yellow" as ID1_ICON_PIPELINE_A_yellow <<yellow>>
+}
+!define ID1_ICON_PIPELINE_P SPRITE
+folder "ICON_PIPELINE_P" {
+  entity "ICON_PIPELINE_P in black" as ID1_ICON_PIPELINE_P_black <<black>>
+  entity "ICON_PIPELINE_P in red" as ID1_ICON_PIPELINE_P_red <<red>>
+  entity "ICON_PIPELINE_P in blue" as ID1_ICON_PIPELINE_P_blue <<blue>>
+  entity "ICON_PIPELINE_P in green" as ID1_ICON_PIPELINE_P_green <<green>>
+  entity "ICON_PIPELINE_P in yellow" as ID1_ICON_PIPELINE_P_yellow <<yellow>>
+}
+!define ID1_ICON_REFRESH_TOKEN SPRITE
+folder "ICON_REFRESH_TOKEN" {
+  entity "ICON_REFRESH_TOKEN in black" as ID1_ICON_REFRESH_TOKEN_black <<black>>
+  entity "ICON_REFRESH_TOKEN in red" as ID1_ICON_REFRESH_TOKEN_red <<red>>
+  entity "ICON_REFRESH_TOKEN in blue" as ID1_ICON_REFRESH_TOKEN_blue <<blue>>
+  entity "ICON_REFRESH_TOKEN in green" as ID1_ICON_REFRESH_TOKEN_green <<green>>
+  entity "ICON_REFRESH_TOKEN in yellow" as ID1_ICON_REFRESH_TOKEN_yellow <<yellow>>
+}
+!define ID1_ICON_SDK SPRITE
+folder "ICON_SDK" {
+  entity "ICON_SDK in black" as ID1_ICON_SDK_black <<black>>
+  entity "ICON_SDK in red" as ID1_ICON_SDK_red <<red>>
+  entity "ICON_SDK in blue" as ID1_ICON_SDK_blue <<blue>>
+  entity "ICON_SDK in green" as ID1_ICON_SDK_green <<green>>
+  entity "ICON_SDK in yellow" as ID1_ICON_SDK_yellow <<yellow>>
+}
+!define ID1_ICON_SDKS SPRITE
+folder "ICON_SDKS" {
+  entity "ICON_SDKS in black" as ID1_ICON_SDKS_black <<black>>
+  entity "ICON_SDKS in red" as ID1_ICON_SDKS_red <<red>>
+  entity "ICON_SDKS in blue" as ID1_ICON_SDKS_blue <<blue>>
+  entity "ICON_SDKS in green" as ID1_ICON_SDKS_green <<green>>
+  entity "ICON_SDKS in yellow" as ID1_ICON_SDKS_yellow <<yellow>>
+}
+!define ID1_ICON_SECURITY SPRITE
+folder "ICON_SECURITY" {
+  entity "ICON_SECURITY in black" as ID1_ICON_SECURITY_black <<black>>
+  entity "ICON_SECURITY in red" as ID1_ICON_SECURITY_red <<red>>
+  entity "ICON_SECURITY in blue" as ID1_ICON_SECURITY_blue <<blue>>
+  entity "ICON_SECURITY in green" as ID1_ICON_SECURITY_green <<green>>
+  entity "ICON_SECURITY in yellow" as ID1_ICON_SECURITY_yellow <<yellow>>
+}
+!define ID1_ICON_SERVER SPRITE
+folder "ICON_SERVER" {
+  entity "ICON_SERVER in black" as ID1_ICON_SERVER_black <<black>>
+  entity "ICON_SERVER in red" as ID1_ICON_SERVER_red <<red>>
+  entity "ICON_SERVER in blue" as ID1_ICON_SERVER_blue <<blue>>
+  entity "ICON_SERVER in green" as ID1_ICON_SERVER_green <<green>>
+  entity "ICON_SERVER in yellow" as ID1_ICON_SERVER_yellow <<yellow>>
+}
+!define ID1_ICON_SETTINGS SPRITE
+folder "ICON_SETTINGS" {
+  entity "ICON_SETTINGS in black" as ID1_ICON_SETTINGS_black <<black>>
+  entity "ICON_SETTINGS in red" as ID1_ICON_SETTINGS_red <<red>>
+  entity "ICON_SETTINGS in blue" as ID1_ICON_SETTINGS_blue <<blue>>
+  entity "ICON_SETTINGS in green" as ID1_ICON_SETTINGS_green <<green>>
+  entity "ICON_SETTINGS in yellow" as ID1_ICON_SETTINGS_yellow <<yellow>>
+}
+!define ID1_ICON_SOCIAL_PROVIDERS SPRITE
+folder "ICON_SOCIAL_PROVIDERS" {
+  entity "ICON_SOCIAL_PROVIDERS in black" as ID1_ICON_SOCIAL_PROVIDERS_black <<black>>
+  entity "ICON_SOCIAL_PROVIDERS in red" as ID1_ICON_SOCIAL_PROVIDERS_red <<red>>
+  entity "ICON_SOCIAL_PROVIDERS in blue" as ID1_ICON_SOCIAL_PROVIDERS_blue <<blue>>
+  entity "ICON_SOCIAL_PROVIDERS in green" as ID1_ICON_SOCIAL_PROVIDERS_green <<green>>
+  entity "ICON_SOCIAL_PROVIDERS in yellow" as ID1_ICON_SOCIAL_PROVIDERS_yellow <<yellow>>
+}
+!define ID1_ICON_SPA SPRITE
+folder "ICON_SPA" {
+  entity "ICON_SPA in black" as ID1_ICON_SPA_black <<black>>
+  entity "ICON_SPA in red" as ID1_ICON_SPA_red <<red>>
+  entity "ICON_SPA in blue" as ID1_ICON_SPA_blue <<blue>>
+  entity "ICON_SPA in green" as ID1_ICON_SPA_green <<green>>
+  entity "ICON_SPA in yellow" as ID1_ICON_SPA_yellow <<yellow>>
+}
+!define ID1_ICON_TEAMS SPRITE
+folder "ICON_TEAMS" {
+  entity "ICON_TEAMS in black" as ID1_ICON_TEAMS_black <<black>>
+  entity "ICON_TEAMS in red" as ID1_ICON_TEAMS_red <<red>>
+  entity "ICON_TEAMS in blue" as ID1_ICON_TEAMS_blue <<blue>>
+  entity "ICON_TEAMS in green" as ID1_ICON_TEAMS_green <<green>>
+  entity "ICON_TEAMS in yellow" as ID1_ICON_TEAMS_yellow <<yellow>>
+}
+!define ID1_ICON_TENANT SPRITE
+folder "ICON_TENANT" {
+  entity "ICON_TENANT in black" as ID1_ICON_TENANT_black <<black>>
+  entity "ICON_TENANT in red" as ID1_ICON_TENANT_red <<red>>
+  entity "ICON_TENANT in blue" as ID1_ICON_TENANT_blue <<blue>>
+  entity "ICON_TENANT in green" as ID1_ICON_TENANT_green <<green>>
+  entity "ICON_TENANT in yellow" as ID1_ICON_TENANT_yellow <<yellow>>
+}
+!define ID1_ICON_USER SPRITE
+folder "ICON_USER" {
+  entity "ICON_USER in black" as ID1_ICON_USER_black <<black>>
+  entity "ICON_USER in red" as ID1_ICON_USER_red <<red>>
+  entity "ICON_USER in blue" as ID1_ICON_USER_blue <<blue>>
+  entity "ICON_USER in green" as ID1_ICON_USER_green <<green>>
+  entity "ICON_USER in yellow" as ID1_ICON_USER_yellow <<yellow>>
+}
+!define ID1_ICON_USER_DATABASE SPRITE
+folder "ICON_USER_DATABASE" {
+  entity "ICON_USER_DATABASE in black" as ID1_ICON_USER_DATABASE_black <<black>>
+  entity "ICON_USER_DATABASE in red" as ID1_ICON_USER_DATABASE_red <<red>>
+  entity "ICON_USER_DATABASE in blue" as ID1_ICON_USER_DATABASE_blue <<blue>>
+  entity "ICON_USER_DATABASE in green" as ID1_ICON_USER_DATABASE_green <<green>>
+  entity "ICON_USER_DATABASE in yellow" as ID1_ICON_USER_DATABASE_yellow <<yellow>>
+}
+!define ID1_ICON_USER_DB SPRITE
+folder "ICON_USER_DB" {
+  entity "ICON_USER_DB in black" as ID1_ICON_USER_DB_black <<black>>
+  entity "ICON_USER_DB in red" as ID1_ICON_USER_DB_red <<red>>
+  entity "ICON_USER_DB in blue" as ID1_ICON_USER_DB_blue <<blue>>
+  entity "ICON_USER_DB in green" as ID1_ICON_USER_DB_green <<green>>
+  entity "ICON_USER_DB in yellow" as ID1_ICON_USER_DB_yellow <<yellow>>
+}
+!define ID1_ICON_USER_MANAGEMENT SPRITE
+folder "ICON_USER_MANAGEMENT" {
+  entity "ICON_USER_MANAGEMENT in black" as ID1_ICON_USER_MANAGEMENT_black <<black>>
+  entity "ICON_USER_MANAGEMENT in red" as ID1_ICON_USER_MANAGEMENT_red <<red>>
+  entity "ICON_USER_MANAGEMENT in blue" as ID1_ICON_USER_MANAGEMENT_blue <<blue>>
+  entity "ICON_USER_MANAGEMENT in green" as ID1_ICON_USER_MANAGEMENT_green <<green>>
+  entity "ICON_USER_MANAGEMENT in yellow" as ID1_ICON_USER_MANAGEMENT_yellow <<yellow>>
+}
+!define ID1_ICON_USERS SPRITE
+folder "ICON_USERS" {
+  entity "ICON_USERS in black" as ID1_ICON_USERS_black <<black>>
+  entity "ICON_USERS in red" as ID1_ICON_USERS_red <<red>>
+  entity "ICON_USERS in blue" as ID1_ICON_USERS_blue <<blue>>
+  entity "ICON_USERS in green" as ID1_ICON_USERS_green <<green>>
+  entity "ICON_USERS in yellow" as ID1_ICON_USERS_yellow <<yellow>>
+}
+!define ID1_ICON_VIDEO SPRITE
+folder "ICON_VIDEO" {
+  entity "ICON_VIDEO in black" as ID1_ICON_VIDEO_black <<black>>
+  entity "ICON_VIDEO in red" as ID1_ICON_VIDEO_red <<red>>
+  entity "ICON_VIDEO in blue" as ID1_ICON_VIDEO_blue <<blue>>
+  entity "ICON_VIDEO in green" as ID1_ICON_VIDEO_green <<green>>
+  entity "ICON_VIDEO in yellow" as ID1_ICON_VIDEO_yellow <<yellow>>
+}
+!define ID1_ICON_WEB_APP SPRITE
+folder "ICON_WEB_APP" {
+  entity "ICON_WEB_APP in black" as ID1_ICON_WEB_APP_black <<black>>
+  entity "ICON_WEB_APP in red" as ID1_ICON_WEB_APP_red <<red>>
+  entity "ICON_WEB_APP in blue" as ID1_ICON_WEB_APP_blue <<blue>>
+  entity "ICON_WEB_APP in green" as ID1_ICON_WEB_APP_green <<green>>
+  entity "ICON_WEB_APP in yellow" as ID1_ICON_WEB_APP_yellow <<yellow>>
+}
+!define ID1_ICON_WEBAUTHN SPRITE
+folder "ICON_WEBAUTHN" {
+  entity "ICON_WEBAUTHN in black" as ID1_ICON_WEBAUTHN_black <<black>>
+  entity "ICON_WEBAUTHN in red" as ID1_ICON_WEBAUTHN_red <<red>>
+  entity "ICON_WEBAUTHN in blue" as ID1_ICON_WEBAUTHN_blue <<blue>>
+  entity "ICON_WEBAUTHN in green" as ID1_ICON_WEBAUTHN_green <<green>>
+  entity "ICON_WEBAUTHN in yellow" as ID1_ICON_WEBAUTHN_yellow <<yellow>>
+}
+!define ID1_ICON-ACCESS-TOKEN SPRITE
+folder "ICON-ACCESS-TOKEN" {
+  entity "ICON-ACCESS-TOKEN in black" as ID1_ICON-ACCESS-TOKEN_black <<black>>
+  entity "ICON-ACCESS-TOKEN in red" as ID1_ICON-ACCESS-TOKEN_red <<red>>
+  entity "ICON-ACCESS-TOKEN in blue" as ID1_ICON-ACCESS-TOKEN_blue <<blue>>
+  entity "ICON-ACCESS-TOKEN in green" as ID1_ICON-ACCESS-TOKEN_green <<green>>
+  entity "ICON-ACCESS-TOKEN in yellow" as ID1_ICON-ACCESS-TOKEN_yellow <<yellow>>
+}
+!define ID1_ICON-API-RELATED SPRITE
+folder "ICON-API-RELATED" {
+  entity "ICON-API-RELATED in black" as ID1_ICON-API-RELATED_black <<black>>
+  entity "ICON-API-RELATED in red" as ID1_ICON-API-RELATED_red <<red>>
+  entity "ICON-API-RELATED in blue" as ID1_ICON-API-RELATED_blue <<blue>>
+  entity "ICON-API-RELATED in green" as ID1_ICON-API-RELATED_green <<green>>
+  entity "ICON-API-RELATED in yellow" as ID1_ICON-API-RELATED_yellow <<yellow>>
+}
+!define ID1_ICON-API SPRITE
+folder "ICON-API" {
+  entity "ICON-API in black" as ID1_ICON-API_black <<black>>
+  entity "ICON-API in red" as ID1_ICON-API_red <<red>>
+  entity "ICON-API in blue" as ID1_ICON-API_blue <<blue>>
+  entity "ICON-API in green" as ID1_ICON-API_green <<green>>
+  entity "ICON-API in yellow" as ID1_ICON-API_yellow <<yellow>>
+}
+!define ID1_ICON-ATTRIBUTES SPRITE
+folder "ICON-ATTRIBUTES" {
+  entity "ICON-ATTRIBUTES in black" as ID1_ICON-ATTRIBUTES_black <<black>>
+  entity "ICON-ATTRIBUTES in red" as ID1_ICON-ATTRIBUTES_red <<red>>
+  entity "ICON-ATTRIBUTES in blue" as ID1_ICON-ATTRIBUTES_blue <<blue>>
+  entity "ICON-ATTRIBUTES in green" as ID1_ICON-ATTRIBUTES_green <<green>>
+  entity "ICON-ATTRIBUTES in yellow" as ID1_ICON-ATTRIBUTES_yellow <<yellow>>
+}
+!define ID1_ICON-AUTH0-AUTHORIZATION-SERVER SPRITE
+folder "ICON-AUTH0-AUTHORIZATION-SERVER" {
+  entity "ICON-AUTH0-AUTHORIZATION-SERVER in black" as ID1_ICON-AUTH0-AUTHORIZATION-SERVER_black <<black>>
+  entity "ICON-AUTH0-AUTHORIZATION-SERVER in red" as ID1_ICON-AUTH0-AUTHORIZATION-SERVER_red <<red>>
+  entity "ICON-AUTH0-AUTHORIZATION-SERVER in blue" as ID1_ICON-AUTH0-AUTHORIZATION-SERVER_blue <<blue>>
+  entity "ICON-AUTH0-AUTHORIZATION-SERVER in green" as ID1_ICON-AUTH0-AUTHORIZATION-SERVER_green <<green>>
+  entity "ICON-AUTH0-AUTHORIZATION-SERVER in yellow" as ID1_ICON-AUTH0-AUTHORIZATION-SERVER_yellow <<yellow>>
+}
+!define ID1_ICON-AUTH0 SPRITE
+folder "ICON-AUTH0" {
+  entity "ICON-AUTH0 in black" as ID1_ICON-AUTH0_black <<black>>
+  entity "ICON-AUTH0 in red" as ID1_ICON-AUTH0_red <<red>>
+  entity "ICON-AUTH0 in blue" as ID1_ICON-AUTH0_blue <<blue>>
+  entity "ICON-AUTH0 in green" as ID1_ICON-AUTH0_green <<green>>
+  entity "ICON-AUTH0 in yellow" as ID1_ICON-AUTH0_yellow <<yellow>>
+}
+!define ID1_ICON-AUTHORIZATION-SERVER SPRITE
+folder "ICON-AUTHORIZATION-SERVER" {
+  entity "ICON-AUTHORIZATION-SERVER in black" as ID1_ICON-AUTHORIZATION-SERVER_black <<black>>
+  entity "ICON-AUTHORIZATION-SERVER in red" as ID1_ICON-AUTHORIZATION-SERVER_red <<red>>
+  entity "ICON-AUTHORIZATION-SERVER in blue" as ID1_ICON-AUTHORIZATION-SERVER_blue <<blue>>
+  entity "ICON-AUTHORIZATION-SERVER in green" as ID1_ICON-AUTHORIZATION-SERVER_green <<green>>
+  entity "ICON-AUTHORIZATION-SERVER in yellow" as ID1_ICON-AUTHORIZATION-SERVER_yellow <<yellow>>
+}
+!define ID1_ICON-BACKEND SPRITE
+folder "ICON-BACKEND" {
+  entity "ICON-BACKEND in black" as ID1_ICON-BACKEND_black <<black>>
+  entity "ICON-BACKEND in red" as ID1_ICON-BACKEND_red <<red>>
+  entity "ICON-BACKEND in blue" as ID1_ICON-BACKEND_blue <<blue>>
+  entity "ICON-BACKEND in green" as ID1_ICON-BACKEND_green <<green>>
+  entity "ICON-BACKEND in yellow" as ID1_ICON-BACKEND_yellow <<yellow>>
+}
+!define ID1_ICON-BOUNDARY-PROTOCOL SPRITE
+folder "ICON-BOUNDARY-PROTOCOL" {
+  entity "ICON-BOUNDARY-PROTOCOL in black" as ID1_ICON-BOUNDARY-PROTOCOL_black <<black>>
+  entity "ICON-BOUNDARY-PROTOCOL in red" as ID1_ICON-BOUNDARY-PROTOCOL_red <<red>>
+  entity "ICON-BOUNDARY-PROTOCOL in blue" as ID1_ICON-BOUNDARY-PROTOCOL_blue <<blue>>
+  entity "ICON-BOUNDARY-PROTOCOL in green" as ID1_ICON-BOUNDARY-PROTOCOL_green <<green>>
+  entity "ICON-BOUNDARY-PROTOCOL in yellow" as ID1_ICON-BOUNDARY-PROTOCOL_yellow <<yellow>>
+}
+!define ID1_ICON-BROWSER SPRITE
+folder "ICON-BROWSER" {
+  entity "ICON-BROWSER in black" as ID1_ICON-BROWSER_black <<black>>
+  entity "ICON-BROWSER in red" as ID1_ICON-BROWSER_red <<red>>
+  entity "ICON-BROWSER in blue" as ID1_ICON-BROWSER_blue <<blue>>
+  entity "ICON-BROWSER in green" as ID1_ICON-BROWSER_green <<green>>
+  entity "ICON-BROWSER in yellow" as ID1_ICON-BROWSER_yellow <<yellow>>
+}
+!define ID1_ICON-CERTIFICATE SPRITE
+folder "ICON-CERTIFICATE" {
+  entity "ICON-CERTIFICATE in black" as ID1_ICON-CERTIFICATE_black <<black>>
+  entity "ICON-CERTIFICATE in red" as ID1_ICON-CERTIFICATE_red <<red>>
+  entity "ICON-CERTIFICATE in blue" as ID1_ICON-CERTIFICATE_blue <<blue>>
+  entity "ICON-CERTIFICATE in green" as ID1_ICON-CERTIFICATE_green <<green>>
+  entity "ICON-CERTIFICATE in yellow" as ID1_ICON-CERTIFICATE_yellow <<yellow>>
+}
+!define ID1_ICON-CLI-SCRIPT SPRITE
+folder "ICON-CLI-SCRIPT" {
+  entity "ICON-CLI-SCRIPT in black" as ID1_ICON-CLI-SCRIPT_black <<black>>
+  entity "ICON-CLI-SCRIPT in red" as ID1_ICON-CLI-SCRIPT_red <<red>>
+  entity "ICON-CLI-SCRIPT in blue" as ID1_ICON-CLI-SCRIPT_blue <<blue>>
+  entity "ICON-CLI-SCRIPT in green" as ID1_ICON-CLI-SCRIPT_green <<green>>
+  entity "ICON-CLI-SCRIPT in yellow" as ID1_ICON-CLI-SCRIPT_yellow <<yellow>>
+}
+!define ID1_ICON-COOKIE SPRITE
+folder "ICON-COOKIE" {
+  entity "ICON-COOKIE in black" as ID1_ICON-COOKIE_black <<black>>
+  entity "ICON-COOKIE in red" as ID1_ICON-COOKIE_red <<red>>
+  entity "ICON-COOKIE in blue" as ID1_ICON-COOKIE_blue <<blue>>
+  entity "ICON-COOKIE in green" as ID1_ICON-COOKIE_green <<green>>
+  entity "ICON-COOKIE in yellow" as ID1_ICON-COOKIE_yellow <<yellow>>
+}
+!define ID1_ICON-CREDENTIAL-APPLICATION SPRITE
+folder "ICON-CREDENTIAL-APPLICATION" {
+  entity "ICON-CREDENTIAL-APPLICATION in black" as ID1_ICON-CREDENTIAL-APPLICATION_black <<black>>
+  entity "ICON-CREDENTIAL-APPLICATION in red" as ID1_ICON-CREDENTIAL-APPLICATION_red <<red>>
+  entity "ICON-CREDENTIAL-APPLICATION in blue" as ID1_ICON-CREDENTIAL-APPLICATION_blue <<blue>>
+  entity "ICON-CREDENTIAL-APPLICATION in green" as ID1_ICON-CREDENTIAL-APPLICATION_green <<green>>
+  entity "ICON-CREDENTIAL-APPLICATION in yellow" as ID1_ICON-CREDENTIAL-APPLICATION_yellow <<yellow>>
+}
+!define ID1_ICON-CREDENTIAL-USER SPRITE
+folder "ICON-CREDENTIAL-USER" {
+  entity "ICON-CREDENTIAL-USER in black" as ID1_ICON-CREDENTIAL-USER_black <<black>>
+  entity "ICON-CREDENTIAL-USER in red" as ID1_ICON-CREDENTIAL-USER_red <<red>>
+  entity "ICON-CREDENTIAL-USER in blue" as ID1_ICON-CREDENTIAL-USER_blue <<blue>>
+  entity "ICON-CREDENTIAL-USER in green" as ID1_ICON-CREDENTIAL-USER_green <<green>>
+  entity "ICON-CREDENTIAL-USER in yellow" as ID1_ICON-CREDENTIAL-USER_yellow <<yellow>>
+}
+!define ID1_ICON-DASHBOARD SPRITE
+folder "ICON-DASHBOARD" {
+  entity "ICON-DASHBOARD in black" as ID1_ICON-DASHBOARD_black <<black>>
+  entity "ICON-DASHBOARD in red" as ID1_ICON-DASHBOARD_red <<red>>
+  entity "ICON-DASHBOARD in blue" as ID1_ICON-DASHBOARD_blue <<blue>>
+  entity "ICON-DASHBOARD in green" as ID1_ICON-DASHBOARD_green <<green>>
+  entity "ICON-DASHBOARD in yellow" as ID1_ICON-DASHBOARD_yellow <<yellow>>
+}
+!define ID1_ICON-DESKTOP-APP SPRITE
+folder "ICON-DESKTOP-APP" {
+  entity "ICON-DESKTOP-APP in black" as ID1_ICON-DESKTOP-APP_black <<black>>
+  entity "ICON-DESKTOP-APP in red" as ID1_ICON-DESKTOP-APP_red <<red>>
+  entity "ICON-DESKTOP-APP in blue" as ID1_ICON-DESKTOP-APP_blue <<blue>>
+  entity "ICON-DESKTOP-APP in green" as ID1_ICON-DESKTOP-APP_green <<green>>
+  entity "ICON-DESKTOP-APP in yellow" as ID1_ICON-DESKTOP-APP_yellow <<yellow>>
+}
+!define ID1_ICON-GENERIC-ENTERPRISE-DIRECTORY SPRITE
+folder "ICON-GENERIC-ENTERPRISE-DIRECTORY" {
+  entity "ICON-GENERIC-ENTERPRISE-DIRECTORY in black" as ID1_ICON-GENERIC-ENTERPRISE-DIRECTORY_black <<black>>
+  entity "ICON-GENERIC-ENTERPRISE-DIRECTORY in red" as ID1_ICON-GENERIC-ENTERPRISE-DIRECTORY_red <<red>>
+  entity "ICON-GENERIC-ENTERPRISE-DIRECTORY in blue" as ID1_ICON-GENERIC-ENTERPRISE-DIRECTORY_blue <<blue>>
+  entity "ICON-GENERIC-ENTERPRISE-DIRECTORY in green" as ID1_ICON-GENERIC-ENTERPRISE-DIRECTORY_green <<green>>
+  entity "ICON-GENERIC-ENTERPRISE-DIRECTORY in yellow" as ID1_ICON-GENERIC-ENTERPRISE-DIRECTORY_yellow <<yellow>>
+}
+!define ID1_ICON-ID-TOKEN SPRITE
+folder "ICON-ID-TOKEN" {
+  entity "ICON-ID-TOKEN in black" as ID1_ICON-ID-TOKEN_black <<black>>
+  entity "ICON-ID-TOKEN in red" as ID1_ICON-ID-TOKEN_red <<red>>
+  entity "ICON-ID-TOKEN in blue" as ID1_ICON-ID-TOKEN_blue <<blue>>
+  entity "ICON-ID-TOKEN in green" as ID1_ICON-ID-TOKEN_green <<green>>
+  entity "ICON-ID-TOKEN in yellow" as ID1_ICON-ID-TOKEN_yellow <<yellow>>
+}
+!define ID1_ICON-MOBILE-APP SPRITE
+folder "ICON-MOBILE-APP" {
+  entity "ICON-MOBILE-APP in black" as ID1_ICON-MOBILE-APP_black <<black>>
+  entity "ICON-MOBILE-APP in red" as ID1_ICON-MOBILE-APP_red <<red>>
+  entity "ICON-MOBILE-APP in blue" as ID1_ICON-MOBILE-APP_blue <<blue>>
+  entity "ICON-MOBILE-APP in green" as ID1_ICON-MOBILE-APP_green <<green>>
+  entity "ICON-MOBILE-APP in yellow" as ID1_ICON-MOBILE-APP_yellow <<yellow>>
+}
+!define ID1_ICON-PIPELINE SPRITE
+folder "ICON-PIPELINE" {
+  entity "ICON-PIPELINE in black" as ID1_ICON-PIPELINE_black <<black>>
+  entity "ICON-PIPELINE in red" as ID1_ICON-PIPELINE_red <<red>>
+  entity "ICON-PIPELINE in blue" as ID1_ICON-PIPELINE_blue <<blue>>
+  entity "ICON-PIPELINE in green" as ID1_ICON-PIPELINE_green <<green>>
+  entity "ICON-PIPELINE in yellow" as ID1_ICON-PIPELINE_yellow <<yellow>>
+}
+!define ID1_ICON-REFRESH-TOKEN SPRITE
+folder "ICON-REFRESH-TOKEN" {
+  entity "ICON-REFRESH-TOKEN in black" as ID1_ICON-REFRESH-TOKEN_black <<black>>
+  entity "ICON-REFRESH-TOKEN in red" as ID1_ICON-REFRESH-TOKEN_red <<red>>
+  entity "ICON-REFRESH-TOKEN in blue" as ID1_ICON-REFRESH-TOKEN_blue <<blue>>
+  entity "ICON-REFRESH-TOKEN in green" as ID1_ICON-REFRESH-TOKEN_green <<green>>
+  entity "ICON-REFRESH-TOKEN in yellow" as ID1_ICON-REFRESH-TOKEN_yellow <<yellow>>
+}
+!define ID1_ICON-SDKS SPRITE
+folder "ICON-SDKS" {
+  entity "ICON-SDKS in black" as ID1_ICON-SDKS_black <<black>>
+  entity "ICON-SDKS in red" as ID1_ICON-SDKS_red <<red>>
+  entity "ICON-SDKS in blue" as ID1_ICON-SDKS_blue <<blue>>
+  entity "ICON-SDKS in green" as ID1_ICON-SDKS_green <<green>>
+  entity "ICON-SDKS in yellow" as ID1_ICON-SDKS_yellow <<yellow>>
+}
+!define ID1_ICON-SERVER SPRITE
+folder "ICON-SERVER" {
+  entity "ICON-SERVER in black" as ID1_ICON-SERVER_black <<black>>
+  entity "ICON-SERVER in red" as ID1_ICON-SERVER_red <<red>>
+  entity "ICON-SERVER in blue" as ID1_ICON-SERVER_blue <<blue>>
+  entity "ICON-SERVER in green" as ID1_ICON-SERVER_green <<green>>
+  entity "ICON-SERVER in yellow" as ID1_ICON-SERVER_yellow <<yellow>>
+}
+!define ID1_ICON-SOCIAL-PROVIDERS SPRITE
+folder "ICON-SOCIAL-PROVIDERS" {
+  entity "ICON-SOCIAL-PROVIDERS in black" as ID1_ICON-SOCIAL-PROVIDERS_black <<black>>
+  entity "ICON-SOCIAL-PROVIDERS in red" as ID1_ICON-SOCIAL-PROVIDERS_red <<red>>
+  entity "ICON-SOCIAL-PROVIDERS in blue" as ID1_ICON-SOCIAL-PROVIDERS_blue <<blue>>
+  entity "ICON-SOCIAL-PROVIDERS in green" as ID1_ICON-SOCIAL-PROVIDERS_green <<green>>
+  entity "ICON-SOCIAL-PROVIDERS in yellow" as ID1_ICON-SOCIAL-PROVIDERS_yellow <<yellow>>
+}
+!define ID1_ICON-SPA SPRITE
+folder "ICON-SPA" {
+  entity "ICON-SPA in black" as ID1_ICON-SPA_black <<black>>
+  entity "ICON-SPA in red" as ID1_ICON-SPA_red <<red>>
+  entity "ICON-SPA in blue" as ID1_ICON-SPA_blue <<blue>>
+  entity "ICON-SPA in green" as ID1_ICON-SPA_green <<green>>
+  entity "ICON-SPA in yellow" as ID1_ICON-SPA_yellow <<yellow>>
+}
+!define ID1_ICON-USER-DB SPRITE
+folder "ICON-USER-DB" {
+  entity "ICON-USER-DB in black" as ID1_ICON-USER-DB_black <<black>>
+  entity "ICON-USER-DB in red" as ID1_ICON-USER-DB_red <<red>>
+  entity "ICON-USER-DB in blue" as ID1_ICON-USER-DB_blue <<blue>>
+  entity "ICON-USER-DB in green" as ID1_ICON-USER-DB_green <<green>>
+  entity "ICON-USER-DB in yellow" as ID1_ICON-USER-DB_yellow <<yellow>>
+}
+!define ID1_ICON-USER SPRITE
+folder "ICON-USER" {
+  entity "ICON-USER in black" as ID1_ICON-USER_black <<black>>
+  entity "ICON-USER in red" as ID1_ICON-USER_red <<red>>
+  entity "ICON-USER in blue" as ID1_ICON-USER_blue <<blue>>
+  entity "ICON-USER in green" as ID1_ICON-USER_green <<green>>
+  entity "ICON-USER in yellow" as ID1_ICON-USER_yellow <<yellow>>
+}
+!define ID1_ICON-WEB-APP SPRITE
+folder "ICON-WEB-APP" {
+  entity "ICON-WEB-APP in black" as ID1_ICON-WEB-APP_black <<black>>
+  entity "ICON-WEB-APP in red" as ID1_ICON-WEB-APP_red <<red>>
+  entity "ICON-WEB-APP in blue" as ID1_ICON-WEB-APP_blue <<blue>>
+  entity "ICON-WEB-APP in green" as ID1_ICON-WEB-APP_green <<green>>
+  entity "ICON-WEB-APP in yellow" as ID1_ICON-WEB-APP_yellow <<yellow>>
+}
+@enduml

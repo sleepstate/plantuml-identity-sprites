@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
 
-# Default parameters (modifiable)
+# Default parameters
 output_dir="./icons"
 png_dir="${output_dir}/png"
 svg_dir="${output_dir}/svg"
-dir="./"
+meta_dir="./meta"
+puml_dir="./puml"
 graylevel=16
 width=48
 height=48
 prefix="ID1"
-color="black"  # Default color for icons
-background_color="transparent"  # Background color for PNGs
+background_color="transparent"
 report_file="sprite_report.log"
+icon_md_file="Icons.md"
+
+# Color themes to be showcased in the PlantUML diagram
+declare -a color_themes=("black" "red" "blue" "green" "yellow")
 
 # Help usage message
 usage="Batch creates sprite files for PlantUML.
@@ -24,7 +28,6 @@ options:
     -w  image width (default: 48)
     -h  image height (default: 48)
     -o  output directory (default: ./icons)
-    -c  icon color (default: black)
     -b  background color (default: transparent)
     prefix: a prefix added to the sprite name."
 
@@ -35,18 +38,17 @@ log_progress() {
 
 # Main function
 main () {
-    log_progress "Initializing sprite generation..."
-    
+    log_progress "Initializing icon processing..."
+
     # Get arguments
-    while getopts p:w:h:g:o:c:b: option
+    while getopts p:w:h:g:o:b: option
     do
         case "$option" in
             p) dir="$OPTARG";;
             w) width="$OPTARG";;
             h) height="$OPTARG";;
             g) graylevel="$OPTARG";;
-            o) output_dir="$OPTARG"; png_dir="${output_dir}/png"; svg_dir="${output_dir}/svg";;
-            c) color="$OPTARG";;
+            o) output_dir="$OPTARG"; png_dir="${output_dir}/png"; svg_dir="${output_dir}/svg"; meta_dir="./meta";;
             b) background_color="$OPTARG";;
             :) echo "$usage"; exit 1;;
            \?) echo "$usage"; exit 1;;
@@ -58,69 +60,95 @@ main () {
     log_progress "Output Directory: $output_dir"
     log_progress "Image Width: $width, Height: $height"
     log_progress "Graylevel: $graylevel"
-    log_progress "Color: $color"
     log_progress "Background Color: $background_color"
     log_progress "Prefix: $prefix"
 
     # Ensure output directories exist
     mkdir -p "$png_dir"
     mkdir -p "$svg_dir"
+    mkdir -p "$meta_dir"
+    mkdir -p "$puml_dir"
     log_progress "Created output directories."
 
-    # Change dir to where images are
-    if [ ! -d "$dir" ]; then
-        log_progress "Error: Invalid directory specified!"
-        echo "$usage"
-        exit 1
-    fi
+    # Initialize Icons.md file in root directory
+    echo "# Icon Set" > "$icon_md_file"
+    echo "### Overview of Generated Icons" >> "$icon_md_file"
+    echo "| Name  | Macro  | Icon |" >> "$icon_md_file"
+    echo "|-------|--------|-------|" >> "$icon_md_file"
+    log_progress "Initialized Icons.md generation."
 
-    cd "$dir"
-
-    # Setup README generation in root
-    echo "# Icon Set" > ../README.md
-    echo "### Overview of Generated Icons" >> ../README.md
-    echo "| Name  | Macro  | PNG  | PUML  |" >> ../README.md
-    echo "|-------|--------|------|-------|" >> ../README.md
-    log_progress "Initialized README generation."
+    # Initialize the theming demo PlantUML file
+    puml_theming_demo="$puml_dir/theming_demo.puml"
+    echo "@startuml" > "$puml_theming_demo"
+    echo "title Icon Theming Demonstration" >> "$puml_theming_demo"
+    echo "skinparam backgroundcolor transparent" >> "$puml_theming_demo"
 
     process_png
+    process_svg
+
+    # Finalize the theming demo PlantUML file
+    echo "@enduml" >> "$puml_theming_demo"
+    log_progress "Finalized theming demonstration PUML."
+
+    # Generate the theming demonstration PNG from the PUML
+    plantuml -tpng "$puml_theming_demo" -o "$meta_dir"
+    log_progress "Generated the theming demonstration PNG."
+
+    echo "Done."
 }
 
-# Process PNG and generate PlantUml sprites
+# Process PNG files and update the Markdown table
 process_png () {
     log_progress "Processing PNG files..."
     
-    for i in *.png; do
+    for i in "$png_dir"/*.png; do
         [ -f "$i" ] || continue
-        log_progress "Processing $i..."
-        convert "$i" -resize "${width}x${height}" -background "$background_color" -fill "$color" "$png_dir/$i"
-        mv "$i" "${i//-/_}"
-    done
-
-    for i in *.png; do
-        [ -f "$png_dir/$i" ] || continue
-        log_progress "Generating PUML for $i..."
-
-        filename=$(echo "$i" | sed -e 's/.png$//')
+        filename=$(basename "$i" .png)
         filenameupper=$(echo "$filename" | tr '[:lower:]' '[:upper:]')
         spritename="${prefix}_${filenameupper}"
-        spritestereo="$prefix $filenameupper"
-        stereowhites=$(echo "$spritestereo" | sed -e 's/./ /g')
 
-        # Generate .puml file
-        echo "@startuml" > "$svg_dir/$filename.puml"
-        echo -e "$(plantuml -encodesprite $graylevel $png_dir/$i | sed -e '1!b' -e 's/\$/$'${prefix}_'/')\n" >> "$svg_dir/$filename.puml"
-        echo "!define ${spritename}(_color) SPRITE_PUT($stereowhites $spritename, _color)" >> "$svg_dir/$filename.puml"
-        echo "!define ${spritename}(_alias) ENTITY(rectangle,$color,$spritename,_alias,${spritename})" >> "$svg_dir/$filename.puml"
-        echo "skinparam folderBackgroundColor<<$prefixupper $filenameupper>> White" >> "$svg_dir/$filename.puml"
-        echo "@enduml" >> "$svg_dir/$filename.puml"
+        # Add the icon to the Markdown table
+        echo "| $filename | ${spritename} | ![icon](./icons/png/$filename.png) |" >> "$icon_md_file"
+        
+        # Add the sprite definition to the theming demo PUML file
+        echo "!define ${spritename} SPRITE" >> "$puml_theming_demo"
+        
+        # Showcase each icon with different color themes
+        echo "folder \"${filenameupper}\" {" >> "$puml_theming_demo"
+        for color in "${color_themes[@]}"; do
+            echo "  entity \"${filenameupper} in $color\" as ${spritename}_${color} <<${color}>>" >> "$puml_theming_demo"
+        done
+        echo "}" >> "$puml_theming_demo"
 
-        # Update the README with PNG and PUML links
-        echo "| $filename | ${spritename} | ![image-$filename](./icons/png/$filename.png) | $filename.puml |" >> ../README.md
-        log_progress "Added $filename to README."
+        log_progress "Processed $filename (PNG)."
     done
+}
+
+# Process SVG files and update the Markdown table
+process_svg () {
+    log_progress "Processing SVG files..."
     
-    log_progress "PNG and PUML processing complete."
+    for i in "$svg_dir"/*.svg; do
+        [ -f "$i" ] || continue
+        filename=$(basename "$i" .svg)
+        filenameupper=$(echo "$filename" | tr '[:lower:]' '[:upper:]')
+        spritename="${prefix}_${filenameupper}"
+
+        # Add the icon to the Markdown table
+        echo "| $filename | ${spritename} | ![icon](./icons/svg/$filename.svg) |" >> "$icon_md_file"
+        
+        # Add the sprite definition to the theming demo PUML file
+        echo "!define ${spritename} SPRITE" >> "$puml_theming_demo"
+        
+        # Showcase each icon with different color themes
+        echo "folder \"${filenameupper}\" {" >> "$puml_theming_demo"
+        for color in "${color_themes[@]}"; do
+            echo "  entity \"${filenameupper} in $color\" as ${spritename}_${color} <<${color}>>" >> "$puml_theming_demo"
+        done
+        echo "}" >> "$puml_theming_demo"
+
+        log_progress "Processed $filename (SVG)."
+    done
 }
 
 main "$@"

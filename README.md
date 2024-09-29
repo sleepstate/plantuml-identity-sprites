@@ -82,3 +82,32 @@ Contributions are welcome. In order to update an existing set of icons or to add
 - Initial release
 
 Enjoy!
+
+
+## Example
+
+```plantuml
+@startuml
+title Icon Theming Demonstration
+skinparam backgroundcolor transparent
+
+!define ID1_ICON_ACCESS_TOKEN SPRITE
+folder "ICON_ACCESS_TOKEN" {
+  entity "ICON_ACCESS_TOKEN in black" as ID1_ICON_ACCESS_TOKEN_black <<black>>
+  entity "ICON_ACCESS_TOKEN in red" as ID1_ICON_ACCESS_TOKEN_red <<red>>
+  entity "ICON_ACCESS_TOKEN in blue" as ID1_ICON_ACCESS_TOKEN_blue <<blue>>
+  entity "ICON_ACCESS_TOKEN in green" as ID1_ICON_ACCESS_TOKEN_green <<green>>
+  entity "ICON_ACCESS_TOKEN in yellow" as ID1_ICON_ACCESS_TOKEN_yellow <<yellow>>
+}
+
+!define ID1_ICON_API SPRITE
+folder "ICON_API" {
+  entity "ICON_API in black" as ID1_ICON_API_black <<black>>
+  entity "ICON_API in red" as ID1_ICON_API_red <<red>>
+  entity "ICON_API in blue" as ID1_ICON_API_blue <<blue>>
+  entity "ICON_API in green" as ID1_ICON_API_green <<green>>
+  entity "ICON_API in yellow" as ID1_ICON_API_yellow <<yellow>>
+}
+@enduml
+
+```
