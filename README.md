@@ -71,12 +71,12 @@ This macro creates an aliased entity with a sprite, colored by a specified color
 - **e_stereo**: The stereotype, which can define additional styling.
 
 #### Syntax:
-```plantuml
+```plaintext
 ENTITY(e_type, e_color, e_sprite, e_alias, e_stereo)
 ```
 
 #### Example:
-```plantuml
+```plaintext
 ENTITY(component, "#00FF00", icon_api, MyAlias, "API")
 ```
 
@@ -95,12 +95,12 @@ This macro extends the above by allowing a label to be displayed under the sprit
 - **e_stereo**: The stereotype, which can define additional styling.
 
 #### Syntax:
-```plantuml
+```plaintext
 ENTITY(e_type, e_color, e_sprite, e_label, e_alias, e_stereo)
 ```
 
 #### Example:
-```plantuml
+```plaintext
 ENTITY(node, "#FFDD00", icon_backend, "Backend Service", MyBackend, "Backend")
 ```
 
@@ -116,16 +116,16 @@ Here is a list of all generated PlantUML sprites. Each sprite can be referenced 
 
 | Icon Name                     | Sprite Macro             | PlantUML Code |
 |-------------------------------|--------------------------|---------------|
-| `icon_access_token`            | `IDENTITY_ICON_ACCESS_TOKEN`  | `!define IDENTITY_ICON_ACCESS_TOKEN(_color, _scale) SPRITE_PUT(IDENTITY_icon_access_token, _color, _scale)` |
-| `icon_account_takeover`        | `IDENTITY_ICON_ACCOUNT_TAKEOVER`  | `!define IDENTITY_ICON_ACCOUNT_TAKEOVER(_color, _scale) SPRITE_PUT(IDENTITY_icon_account_takeover, _color, _scale)` |
-| `icon_actions`                 | `IDENTITY_ICON_ACTIONS`  | `!define IDENTITY_ICON_ACTIONS(_color, _scale) SPRITE_PUT(IDENTITY_icon_actions, _color, _scale)` |
-| `icon_activity`                | `IDENTITY_ICON_ACTIVITY`  | `!define IDENTITY_ICON_ACTIVITY(_color, _scale) SPRITE_PUT(IDENTITY_icon_activity, _color, _scale)` |
-| `icon_api`                     | `IDENTITY_ICON_API`  | `!define IDENTITY_ICON_API(_color, _scale) SPRITE_PUT(IDENTITY_icon_api, _color, _scale)` |
-| `icon_auth0`                   | `IDENTITY_ICON_AUTH0`  | `!define IDENTITY_ICON_AUTH0(_color, _scale) SPRITE_PUT(IDENTITY_icon_auth0, _color, _scale)` |
-| `icon_authorization_server`     | `IDENTITY_ICON_AUTHORIZATION_SERVER`  | `!define IDENTITY_ICON_AUTHORIZATION_SERVER(_color, _scale) SPRITE_PUT(IDENTITY_icon_authorization_server, _color, _scale)` |
-| `icon_backend`                 | `IDENTITY_ICON_BACKEND`  | `!define IDENTITY_ICON_BACKEND(_color, _scale) SPRITE_PUT(IDENTITY_icon_backend, _color, _scale)` |
-| `icon_biometrics`              | `IDENTITY_ICON_BIOMETRICS`  | `!define IDENTITY_ICON_BIOMETRICS(_color, _scale) SPRITE_PUT(IDENTITY_icon_biometrics, _color, _scale)` |
-| `icon_certificate`             | `IDENTITY_ICON_CERTIFICATE`  | `!define IDENTITY_ICON_CERTIFICATE(_color, _scale) SPRITE_PUT(IDENTITY_icon_certificate, _color, _scale)` |
+| `icon_access_token`            | `BC_ICON_ACCESS_TOKEN`  | `!define BC_ICON_ACCESS_TOKEN(_color, _scale) SPRITE_PUT(BC_ICON_access_token, _color, _scale)` |
+| `icon_account_takeover`        | `BC_ICON_ACCOUNT_TAKEOVER`  | `!define BC_ICON_ACCOUNT_TAKEOVER(_color, _scale) SPRITE_PUT(BC_ICON_account_takeover, _color, _scale)` |
+| `icon_actions`                 | `BC_ICON_ACTIONS`  | `!define BC_ICON_ACTIONS(_color, _scale) SPRITE_PUT(BC_ICON_actions, _color, _scale)` |
+| `icon_activity`                | `BC_ICON_ACTIVITY`  | `!define BC_ICON_ACTIVITY(_color, _scale) SPRITE_PUT(BC_ICON_activity, _color, _scale)` |
+| `icon_api`                     | `BC_ICON_API`  | `!define BC_ICON_API(_color, _scale) SPRITE_PUT(BC_ICON_api, _color, _scale)` |
+| `icon_auth0`                   | `BC_ICON_AUTH0`  | `!define BC_ICON_AUTH0(_color, _scale) SPRITE_PUT(BC_ICON_auth0, _color, _scale)` |
+| `icon_authorization_server`     | `BC_ICON_AUTHORIZATION_SERVER`  | `!define BC_ICON_AUTHORIZATION_SERVER(_color, _scale) SPRITE_PUT(BC_ICON_authorization_server, _color, _scale)` |
+| `icon_backend`                 | `BC_ICON_BACKEND`  | `!define BC_ICON_BACKEND(_color, _scale) SPRITE_PUT(BC_ICON_backend, _color, _scale)` |
+| `icon_biometrics`              | `BC_ICON_BIOMETRICS`  | `!define BC_ICON_BIOMETRICS(_color, _scale) SPRITE_PUT(BC_ICON_biometrics, _color, _scale)` |
+| `icon_certificate`             | `BC_ICON_CERTIFICATE`  | `!define BC_ICON_CERTIFICATE(_color, _scale) SPRITE_PUT(BC_ICON_certificate, _color, _scale)` |
 
 _For the full list of sprites, please refer to the [sprite index](meta/index.md)._
 
@@ -135,15 +135,15 @@ Here is an example PlantUML diagram using the generated sprites:
 
 ```plantuml
 @startuml
-!define spriteURL https://raw.githubusercontent.com/sleepstate/plantuml-identity-sprites/main/puml/
+!include https://raw.githubusercontent.com/sleepstate/plantuml-identity-sprites/refs/heads/main/common.puml
 
-!include spriteURL/icon_access_token.puml
-!include spriteURL/icon_backend.puml
-!include spriteURL/icon_api.puml
+!include https://raw.githubusercontent.com/sleepstate/plantuml-identity-sprites/main/puml/icon_access_token.puml
+!include https://raw.githubusercontent.com/sleepstate/plantuml-identity-sprites/main/puml/icon_backend.puml
+!include https://raw.githubusercontent.com/sleepstate/plantuml-identity-sprites/main/puml/icon_api.puml
 
-IDENTITY_ICON_ACCESS_TOKEN("green", 1.2)
-IDENTITY_ICON_BACKEND("#FFDD00", 1.5)
-IDENTITY_ICON_API("blue", 1.0)
+BC_ICON_ACCESS_TOKEN()
+BC_ICON_BACKEND("#FFDD00", 1.5)
+BC_ICON_API("blue", 1.0)
 @enduml
 ```
 
@@ -157,10 +157,10 @@ The generated PlantUML sprite macros allow for customization with the following 
 
 ### Example Customization
 
-```plantuml
+```plaintext
 @startuml
-IDENTITY_ICON_ACCESS_TOKEN("#00FF00", 2)    ' Large green icon
-IDENTITY_ICON_BACKEND("blue", 1.5)          ' Scaled blue icon
+BC_ICON_ACCESS_TOKEN("#00FF00", 2)    ' Large green icon
+BC_ICON_BACKEND("blue", 1.5)          ' Scaled blue icon
 @enduml
 ```
 
